@@ -1,9 +1,9 @@
 import React from 'react';
-import './portfolio.css';
+import './Portofolio.css';
 import { Navbar } from '../../components';
 import { Inner } from '../../commons';
 
-function portfolio() {
+function Portofolio() {
   return (
     <Inner>
       <Navbar/>
@@ -12,4 +12,4 @@ function portfolio() {
   )
 }
 
-export default portfolio
+export default Portofolio

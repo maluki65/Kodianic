@@ -1,0 +1,65 @@
+.navbar{
+  position: sticky;
+}
+.hambuger{
+  font-size: 1.3rem;
+  font-weight: 500;
+  display: none;
+}
+
+/*On responsive Text*/
+@media (min-width:2560px){
+  #listBtn{
+    font-size: 2.5rem;
+    }
+    .navbar .logo img{
+      width: 150px;
+      height:150px; 
+  }
+  .navlinks ul li a {
+    margin-left: 2rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+}
+
+@media (max-width:924px) {
+  .navbar .navlinks {
+    position: absolute;
+    top:0;
+    right:0;
+    width:100%;
+    height:100vh;
+    display:none;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, rgb(253, 253, 253), rgba(0, 0, 0, 2)); 
+  }
+  .navbar .navlinks.open {
+    display: flex;
+    flex-direction: column;
+  }
+  .navlinks ul {
+    display: flex;
+    flex-direction: column;
+      
+  }
+  .navlinks li{
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+  }
+  #listBtn{
+    display: none;
+  }
+  .hambuger{
+    display: block;
+    position: relative;
+    color: #104579;
+  }
+}
+
+@media (max-width:600px){
+  .collaboration{
+    display: none;
+  }
+}
