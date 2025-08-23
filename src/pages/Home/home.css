@@ -1,0 +1,29 @@
+@media (min-width:2560px){
+  .HomeContent h1{
+    font-size: 4em;
+  }
+  .HomeContent p, .HomeContent button{
+    font-size: 2em;
+  }
+}
+
+@media (max-width:768px){
+  .HomeContent h1{
+    font-size: 2em;
+  }
+  .HomeContent p, .HomeContent button{
+    font-size: 12px;
+  }
+}
+
+@media (max-width:625px){
+  .HomeContent h1{
+    font-size: 1.5em;
+  }
+  .HomeContent p{
+    padding: 5px;
+  }
+  .HomeContent p, .HomeContent button{
+    font-size: 12px;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './navbar.css';
-import { Logo, LogoB } from '../../assets';
+import { Logo, LogoB, LogoS } from '../../assets';
 import { FaBarsStaggered } from "react-icons/fa6";
 
 function navbar() {
@@ -52,7 +52,7 @@ function navbar() {
     <>
       <div className={`py-1 px-[3%] flex items-center justify-between top-0 z-[1000]  w-[100%] ${sticky ? 'backdrop-blur-[20px] bg-[rgb(238,236,236)]' : ''} navbar`}>
         <div className=''>
-          <img src={LogoB} className='h-[80px] w-[80px]' alt='Kodianic'/>
+          <img src={LogoB} className='h-[60px] w-[60px]' alt='Kodianic'/>
         </div>
 
         <div className='collaboration'>
