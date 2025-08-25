@@ -5,7 +5,17 @@
   .HomeContent p, .HomeContent button{
     font-size: 2em;
   }
-}
+  .About img{
+    height: 400px;
+    width: 350px;
+  }
+  .About h1{
+    font-size: 2.8em;
+  }
+  .Acontent button, .Acontent p, .About a{
+    font-size: 1.5em;
+  }
+} 
 
 @media (max-width:768px){
   .HomeContent h1{
@@ -14,9 +24,19 @@
   .HomeContent p, .HomeContent button{
     font-size: 12px;
   }
+  .About img{
+    height: 300px;
+    width: 250px;
+  }
+  .About h1{
+    font-size: 1.2em;
+  }
+  .Acontent button, .Acontent p, .About a{
+    font-size: 10px;
+  }
 }
 
-@media (max-width:625px){
+@media (max-width:626px){
   .HomeContent h1{
     font-size: 1.5em;
   }
@@ -25,5 +45,29 @@
   }
   .HomeContent p, .HomeContent button{
     font-size: 12px;
+  }
+  .About{
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+  .About img{
+    display: none;
+  }
+}
+
+@media (max-width:426px) {
+  .projectContainer{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .projectContainer img{
+    margin-top: 20px;
+  } 
+}
+
+@media(max-width:376px) {
+  .Acontent{
+    display: flex;
+    flex-wrap: wrap;
   }
 }
