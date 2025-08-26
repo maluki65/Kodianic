@@ -53,6 +53,12 @@
   .About img{
     display: none;
   }
+  .SText{
+    align-items: start;
+    font-size: 4rem ;
+    height: 150px;
+    padding: 5px 10px;
+  }
 }
 
 @media (max-width:426px) {
@@ -69,5 +75,9 @@
   .Acontent{
     display: flex;
     flex-wrap: wrap;
+  }
+  
+  .SText h1 span{
+    margin-left: 10px;
   }
 }

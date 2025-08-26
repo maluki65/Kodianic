@@ -2,9 +2,9 @@ import React from 'react';
 import './home.css';
 import { useNavigate } from 'react-router-dom';
 import { Inner } from '../../commons';
-import { Navbar } from '../../components';
+import { Navbar, ServicesItem } from '../../components';
+import services from '../../commons/Data/services';
 import { prestige, prestige1, memories, verodah, team1 } from '../../assets';
-
 function home() {
   const navigate = useNavigate();
 
@@ -45,7 +45,7 @@ function home() {
 
       </section>
 
-      <section className='my-[2rem] bg-[#f8f8f8] rounded-t-4xl px-[4%] min-h-[40vh]'>
+      <section className='my-[2rem] bg-[#f8f8f8]  rounded-t-4xl px-[4%] min-h-[40vh]'>
         <div className='grid grid-cols-[30%_70%] gap-3 p-4 About' id='About'>
           <div className='bg-transparent relative'>
             <img 
@@ -84,6 +84,28 @@ function home() {
                 Get to know more
               </a>
           </div>
+        </div>
+      </section>
+
+      <section className='my-[2rem] px-[4%] min-h-[80vh] overflow-hidden services' id='Services'>
+        <div className=''>
+          <div className='h-[300px] flex  text-8xl lg:text-[160px] uppercase lg:leading-[140px] px-36 SText'>
+            <h1 className='w-full h-max'>
+              Our <br/>
+              <span className='ml-20 lg:ml-52'>services</span>
+            </h1>
+          </div>
+        </div>
+
+        <div className='space-y-10'>
+          {services.map((item, index) => {
+            return (
+              <ServicesItem
+                key={index}
+                service={item}
+              />
+            )
+        })}
         </div>
       </section>
     </Inner>

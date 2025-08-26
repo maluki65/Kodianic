@@ -1,0 +1,35 @@
+@media(min-width:2560px){
+  .serviceCard h2{
+    font-size: 7rem;
+  }
+  .serviceCard p, .serviceCard button{
+    font-size: 2rem;
+  }
+  .serviceCard img{
+    height:800px;
+  }
+}
+
+@media(max-width:769px){
+  .serviceCard h2{
+    font-size: 3rem;
+  }
+  .serviceCard p, .serviceCard button{
+    font-size: 1rem;
+  }
+}
+
+@media(max-width:626px){
+  .serviceCard {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media(max-width:376px){
+  .serviceCard  h2{
+    font-size: 2rem;
+  }
+  .serviceCard  img{
+    height:200px;
+  }
+}
