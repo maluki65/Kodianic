@@ -1,3 +1,21 @@
 body {
   font-family: 'Montserrat', 'Poppins' sans-serif;
 }
+.dark{
+  color: #104579;
+}
+.light{
+  color: #F0BC02;
+}
+.bright{
+  color: #fff;
+}
+.bgdark{
+  background-color: #104579;
+}
+.bglight{
+  background-color:  #F0BC02;
+}
+.bgbright{
+  background-color: #fff;
+}
