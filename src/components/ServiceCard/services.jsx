@@ -9,7 +9,7 @@ function servicesItem({service}) {
         <h2 className='text-7xl'>{service.heading}</h2>
         <p className=''>{service.content}</p>
         <button className='py-2 px-4 border-1 bg-[#104579] border-[#000] text-[#fff] cursor-pointer rounded-full mr-auto hover:bg-[#F0BC02]'>
-          Find out more
+          Get in touch
         </button>
       </div>
       <div className='h-full w-full'>

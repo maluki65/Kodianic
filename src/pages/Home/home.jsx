@@ -6,8 +6,13 @@ import { ReactLenis } from 'lenis/react';
 import { Inner } from '../../commons';
 import { Navbar, ServicesItem } from '../../components';
 import services from '../../commons/Data/services';
+import { IconsItems } from '../../components';
+import Icons from '../../commons/Data/Icons';
 import { prestige, prestige1, memories, verodah, team1 } from '../../assets';
 import useWindowSize from '../../Hooks/WindowSize';
+import { SiVite, SiTailwindcss, SiFramer } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
+import { TbBrandFramerMotion } from "react-icons/tb";
 
 function home() {
   const navigate = useNavigate();
@@ -40,7 +45,7 @@ function home() {
   return (
     <Inner>
       <Navbar/>
-      <section className=' my-[10px] px-[4%] min-h-[80vh] flex flex-col justify-center items-center gap-7 overflow-hidden'>
+      <section className=' relative my-[10px] px-[4%] min-h-[90vh] flex flex-col justify-center  gap-7 overflow-hidden'>
         <div className='flex flex-col gap-5 justify-center items-center HomeContent'>
           <h1 className='text-6xl text-center'>
             <span className='text-[#F0BC02]/60'>Web</span>sites That Convert. Apps That Scale. Tech That Works For <span className='light'>you</span>
@@ -53,10 +58,35 @@ function home() {
           <button 
             onClick={handleNavigate}
             className='py-2 px-3 text-base rounded-md bg-[#104579] text-[#fff] text-center cursor-pointer'>
-            View Projects
+            Discover Our Portfolio
           </button>
+
+          <div className='grid grid-cols-2 gap-2 items-center justify-between Profiles'>
+            <div className='flex flex-col gap-2'>
+              <p className='text-[#3a3a3a] text-base leading-relaxed cursor-pointer'>
+                A global partner for founders and innovators.
+              </p>
+              <div className='flex items-center space-x-1 my-2'>
+                    <div className='flex -space-x-2'>
+                      <img src={prestige1} alt='user1' className='w-15 h-15 rounded-full border-2 border-white'/>
+                      <img src={memories} alt='user2' className='w-15 h-15 rounded-full border-2 border-white'/>
+                      <img src={verodah} alt='user3' className='w-15 h-15 rounded-full border-2 border-white'/>
+                      <img src={verodah} alt='user3' className='w-15 h-15 rounded-full border-2 border-white'/>
+                      <div className='w-8 h-8 rounded-full bg-gray-300 border-2 border-white flex items-center justify-center text-xs font-semibold text-gray-700 divPlus'>
+                        +20
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div className='grid grid-cols-4 gap-2 HIcons'>
+              <p className='flex items-center gap-2 text-[#6a6868]'><SiVite size={25}/>Vite </p>
+              <p className='flex items-center gap-2 text-[#6a6868]'><FaReact size={25}/>React</p>
+              <p className='flex items-center gap-2 text-[#6a6868]'><SiTailwindcss  size={25}/>Tailwindcss</p>
+              <p className='flex items-center gap-2 text-[#6a6868]'><TbBrandFramerMotion size={25}/>Framer Motion</p>
+            </div>
+          </div>
         </div>
-        <div className=' my-[30px] grid grid-cols-3 gap-6  justify-center items-center projectContainer'>
+        {/*<div className=' my-[30px] grid grid-cols-3 gap-6  justify-center items-center projectContainer'>
           <a href='https://www.memories.co.ke/' className='perspective-[1000px]' target='_blank' rel='noopener noreferrer'>
             <img  className='transform skew-y-6 shadow-lg rounded-xl cursor-pointer imgPro'  src={memories} alt='Project'/>
           </a>
@@ -66,12 +96,11 @@ function home() {
           <a href='https://verodahfreighters.com/' target='_blank' rel='noopener noreferrer'>
             <img  className='transform skew-y-6 shadow-lg rounded-xl cursor-pointer'  src={verodah} alt='Project'/>
           </a>       
-        </div>
-
+        </div>*/}
       </section>
 
-      <section className='my-[2rem] bg-[#f8f8f8]  rounded-t-4xl px-[4%] min-h-[40vh]'>
-        <div className='grid grid-cols-[30%_70%] gap-3 p-4 About' id='About'>
+      <section className='my-[2rem] bg-[#f8f8f8] flex flex-col gap-4 rounded-t-4xl px-[4%] min-h-[40vh] overflow-hidden' id='About'>
+        <div className='grid grid-cols-[30%_70%] gap-3 p-4 About' >
           <div className='bg-transparent relative'>
             <img 
               className='top-0 left-0 h-[200px] w-[150px] rounded-md'
@@ -94,7 +123,7 @@ function home() {
                 At Kodianic, we believe every great product starts with a vision. Our journey began with a simple idea: to strip away digital roadblocks and help businesses thrive online. Today, we combine strategy, design, and engineering to build solutions that don’t just look good—but perform, scale, and grow with you. 
                 </p>
                 <p className='font-light'>
-                From conversion-focused websites and e-commerce to SaaS platforms, apps, and API integrations, our work is rooted in clean user experiences, reliable code, and measurable results. We’re not just building products—we’re building long-term digital partners for your success
+                Our team specializes in crafting conversion-focused websites, e-commerce solutions, SaaS platforms, apps, and API integrations. Every project is powered by clean user experiences, reliable code, and measurable results.More than just building products, we’re forging long-term digital partnerships for your success.
                 </p>
               </div>
               <a 
@@ -105,10 +134,22 @@ function home() {
             </div>
             <a 
               onClick={handleNavigate}
-              className='underline font-semibold text-[#104579] cursor-pointer text-sm'>
+              className='underline font-semibold text-[#104579] cursor-pointer text-sm hover:text-[#F0BC02]'>
                 Get to know more
               </a>
           </div>
+        </div>
+
+        <div className='grid grid-cols-4 gap-3 my-4 py-5 MapIcons'>
+          {Icons.map((items, index) => {
+             return (
+              <div key={index}>
+                <IconsItems
+                  Icons={items}
+                /> 
+              </div>
+            );
+          })}
         </div>
       </section>
 

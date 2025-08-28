@@ -23,13 +23,19 @@
   .serviceCard {
     grid-template-columns: repeat(1, 1fr);
   }
+  .serviceCard  img, .serviceCard  button{
+    display: none;
+  }
 }
 
 @media(max-width:376px){
   .serviceCard  h2{
     font-size: 2rem;
   }
-  .serviceCard  img{
-    height:200px;
+}
+
+@media(max-width:321px){
+  .serviceCard  h2{
+    font-size: 1.6rem;
   }
 }

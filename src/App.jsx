@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route,  } from 'react-router-dom';
 import { Home, Portofolio } from './pages';
 import { motion, AnimatePresence } from 'framer-motion'
+import ScrollToHashElement from './components/ScrollToHashElement';
 
 
 function AnimatedRoutes () {
@@ -27,6 +28,7 @@ function App() {
           animate = {{ opacity:1, y: 0 }}
           transition = {{ duration: 0.9 }}
           >
+            <ScrollToHashElement/>
             <AnimatedRoutes/>
           </motion.div>
       </Router>

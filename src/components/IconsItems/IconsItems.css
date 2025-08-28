@@ -1,0 +1,15 @@
+@media(min-width: 2560px){
+  .CIcons{
+    padding: 40px 20px;
+  }
+}
+
+@media(max-width:321px) {
+  .CIcons{
+    gap: 1px;
+    padding:  20px;
+  }
+  .CIcons span{
+    font-size: 1rem;
+  }
+}

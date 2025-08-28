@@ -42,6 +42,27 @@ function navbar() {
     }
   }, []);
 
+  const handelScroll = (id) => {
+    if (location.pathname !== '/') {
+      naviagte('/#' + id);
+    } else {
+      const element = document.getElementById(id);
+      if(element) {
+        element.scrollIntoView({behavior: 'smooth'});
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({behavior: 'smooth'});
+      }
+    }
+  },[location]);
+
   const NavLinks = [
     { name: 'Home', link: '/' },
     { name: 'About', link: '#About' },

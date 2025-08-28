@@ -15,6 +15,10 @@
   .Acontent button, .Acontent p, .About a{
     font-size: 1.5em;
   }
+  .Profiles img{
+    height: 140px;
+    width: 140px;
+  }
 } 
 
 @media (max-width:768px){
@@ -33,6 +37,9 @@
   }
   .Acontent button, .Acontent p, .About a{
     font-size: 10px;
+  }
+  .MapIcons{
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -59,6 +66,13 @@
     height: 150px;
     padding: 5px 10px;
   }
+  .Profiles{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (max-width:426px) {
@@ -68,7 +82,10 @@
   }
   .projectContainer img{
     margin-top: 20px;
-  } 
+  }
+  .MapIcons{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media(max-width:376px) {
@@ -76,8 +93,10 @@
     display: flex;
     flex-wrap: wrap;
   }
-  
   .SText h1 span{
     margin-left: 10px;
+  }
+  .HIcons{
+    grid-template-columns: repeat(2, 1fr);
   }
 }
