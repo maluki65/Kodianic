@@ -11,8 +11,8 @@ function servicesItem({service}) {
   }
 
   return (
-    <div className='bg-[#fff] grid grid-cols-[60%_40%] max-w-[90%] h-full mx-1 py-5 px-5 gap-2 rounded-3xl shadow-xl overflow-hidden serviceCard'>
-      <div className='grid content-center gap-5'>
+    <div className='bg-[#fff] grid grid-cols-[60%_40%] mx-auto max-w-[90%] h-full py-5 px-5 gap-2 rounded-3xl shadow-xl overflow-hidden serviceCard'>
+      <div className='grid content-center gap-3'>
         <div className='flex items-center justify-between'>
          <h2 className='text-7xl'>{service.heading}</h2>
          <p className='rounded-full py-2 px-3 bg-[#F0BC02] text-sm hidden SForm '>{service.form}</p>

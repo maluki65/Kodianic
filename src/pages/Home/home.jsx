@@ -6,14 +6,16 @@ import { ReactLenis } from 'lenis/react';
 import { Inner } from '../../commons';
 import { Navbar, ServicesItem } from '../../components';
 import services from '../../commons/Data/services';
-import ProjectItems from '../../components';
-import { IconsItems } from '../../components';
+import { IconsItems, ProjectItems } from '../../components';
 import Icons from '../../commons/Data/Icons';
-import { prestige, prestige1, memories, verodah, team1, global, global01, global02, global03 } from '../../assets';
+import { prestige, prestige1, memories, verodah, team1, global, global01, global02, global03, Joraf } from '../../assets';
 import useWindowSize from '../../Hooks/WindowSize';
 import { SiVite, SiTailwindcss, SiFramer } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
 import { TbBrandFramerMotion } from "react-icons/tb";
+import { SiMongodb, SiExpress } from "react-icons/si";
+import { FaReact, FaNodeJs, FaDocker, FaGithub, FaPaypal } from "react-icons/fa";
+import { DiRedis } from "react-icons/di";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 function home() {
   const navigate = useNavigate();
@@ -155,7 +157,7 @@ function home() {
       </section>
 
       <ReactLenis root>
-        <section className='my-[2rem] px-[4%] min-h-[200vh] services' id='Services'>
+        <section className='my-[2rem] px-[4%] min-h-[200vh] flex services' id='Services'>
           <div ref={targetRef} className='relative'>
             <motion.div className='h-[300px] sticky top-0 flex text-8xl lg:text-[160px] uppercase lg:leading-[140px] px-36 SText'
             style={{scale:animation[0].scale, opacity: animation[0].opacity}}>
@@ -185,7 +187,7 @@ function home() {
         </section>
       </ReactLenis>
 
-      <section className='my-[1rem] px-[4%] min-h-[80vh] flex overflow-hidden'>
+      <section className='my-[1rem] px-[4%] py-[1.5rem] min-h-[80vh] overflow-hidden'>
         <div className='grid grid-cols-[20%_50%_30%] gap-2 h-fit justify-center items-center Pprojects'>
          <div className='w-fit flex items-end'>
           <h2 className='rounded-full border-2 bg-transparent px-4 py-1 hover:border-[#F0BC02] cursor-pointer '>Projects</h2>
@@ -199,6 +201,94 @@ function home() {
            Transformations that speak for themselves, proving the power of strategy and design.
           </p> 
          </div>   
+        </div>
+
+        <div className='grid grid-cols-[30%_40%_30%] gap-2 mt-[2rem]'>
+          <div className='h-[400px] flex flex-col gap-2 p-1 rounded-md shadow-xl'>
+            <img 
+              src={Joraf}
+              alt='Joraf'
+              className='rounded-md w-full h-[60%]'
+            />
+            <div className='my-2 px-3 flex flex-col gap-2'>
+              <div className='flex items-center justify-between'>
+                <h3 className='text-base font-medium'>
+                  Joraf Enterprise
+                </h3>
+                <a  
+                  href='https://joraf.co.ke/'
+                  className='px-3 rounded-4xl bg-green-200 cursor-pointer hover:underline' target='_blank' rel='noopener noreferrer'>
+                  live
+                </a>
+              </div>
+              <p className='leading-relaxed text-sm'>
+                A clean website showcasing Joraf’s coconut products, avocado oil, hibiscus, and ginger juice, emphasizing quality and easy customer access.
+              </p>
+              <div className='flex flex-wrap gap-4'>
+                <p className='bg-[#3593f1] flex items-center px-4 py-1 rounded-md'><FaNodeJs className='text-[#fff]' size={20}/></p>
+                <p className='bg-[#3593f1] flex items-center px-4 py-1 rounded-md'><SiTailwindcss className='text-[#fff]' size={20}/></p>
+                <p className='bg-[#f2db88] px-4 py-1 rounded-md'>
+                 landing page
+                </p>
+              </div>
+              <div className='my-2'>
+                <a 
+                  href='https://joraf.co.ke/'
+                  className='flex items-center gap-1 bg-[#104579] py-1 px-3 rounded-md justify-center text-[#fff] text-base cursor-pointer hover:underline' target='_blank' rel='noopener noreferrer'>
+                 visit website
+                  <FaExternalLinkAlt className='' />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className='h-[400px] bg-cover bg-center rounded-md'
+            style={{ backgroundImage: `url(${verodah})` }}>
+            <div className='relative flex h-full w-full rounded-md'
+              style={{background: 'rgba(10, 31, 68, 0.7)' }}>
+              <div className='absolute '>
+                <h1 className=' text-[#fff]'>export default home</h1>
+              </div>
+            </div>
+          </div>
+
+          <div className='h-[400px] flex flex-col gap-2 p-1 rounded-md shadow-xl'>
+            <div className='my-2 px-3 flex flex-col gap-2'>
+              <div className='flex items-center justify-between'>
+                <h3 className='text-base font-medium'>
+                  Prestige Rides
+                </h3>
+                <a  
+                  href='https://PrestigeRidesNairobi.com/'
+                  className='px-3 rounded-4xl bg-green-200 cursor-pointer hover:underline' target='_blank' rel='noopener noreferrer'>
+                  live
+                </a>
+              </div>
+              <p className='leading-relaxed text-sm'>
+               A sleek website for a Nairobi car dealership, showcasing sales and services with a premium, trust-building experience.
+              </p>
+              <div className='flex flex-wrap gap-4'>
+                <p className='bg-[#3593f1] flex items-center px-4 py-1 rounded-md'><FaNodeJs className='text-[#fff]' size={20}/></p>
+                <p className='bg-[#3593f1] flex items-center px-4 py-1 rounded-md'><FaReact className='text-[#fff]' size={20}/></p>
+                <p className='bg-[#f2db88] px-4 py-1 rounded-md'>
+                Car dealership
+                </p>
+              </div>
+              <div className='my-2'>
+                <a 
+                  href='https://PrestigeRidesNairobi.com/'
+                  className='flex items-center gap-1 bg-[#104579] py-1 px-3 rounded-md justify-center text-[#fff] text-base cursor-pointer hover:underline' target='_blank' rel='noopener noreferrer'>
+                    visit website
+                  <FaExternalLinkAlt className='' />
+                </a>
+              </div>
+            </div>
+            <img 
+              src={prestige1}
+              alt='Prestige Rides Nairobi'
+              className='rounded-md w-full h-[40%]'
+            />
+          </div>
         </div>
       </section>
     </Inner>
