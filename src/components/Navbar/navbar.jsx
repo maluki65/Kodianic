@@ -72,7 +72,7 @@ function navbar() {
   return (
     <>
       <div className={`py-1 px-[3%] flex items-center justify-between top-0 z-[1000]  w-[100%] ${sticky ? 'backdrop-blur-[20px] bg-[rgb(238,236,236)]' : ''} navbar`}>
-        <div className=''>
+        <div className='logo'>
           <img src={LogoB} className='h-[60px] w-[60px]' alt='Kodianic'/>
         </div>
 
@@ -101,7 +101,7 @@ function navbar() {
           </ul>
         </div>
 
-        <div className=''>
+        <div className='collaboration'>
           <p className='text-sm underline font-semibold cursor-pointer hover:text-[#104579]'>
             Discuss a project
           </p>

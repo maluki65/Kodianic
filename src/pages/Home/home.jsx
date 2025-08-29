@@ -6,9 +6,10 @@ import { ReactLenis } from 'lenis/react';
 import { Inner } from '../../commons';
 import { Navbar, ServicesItem } from '../../components';
 import services from '../../commons/Data/services';
+import ProjectItems from '../../components';
 import { IconsItems } from '../../components';
 import Icons from '../../commons/Data/Icons';
-import { prestige, prestige1, memories, verodah, team1 } from '../../assets';
+import { prestige, prestige1, memories, verodah, team1, global, global01, global02, global03 } from '../../assets';
 import useWindowSize from '../../Hooks/WindowSize';
 import { SiVite, SiTailwindcss, SiFramer } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
@@ -57,7 +58,7 @@ function home() {
 
           <button 
             onClick={handleNavigate}
-            className='py-2 px-3 text-base rounded-md bg-[#104579] text-[#fff] text-center cursor-pointer'>
+            className='py-2 px-3 text-base rounded-md bg-[#104579] text-[#fff] text-center cursor-pointer hover:bg-transparent hover:border-1 hover:text-[#000] hover:border-[#F0BC02]'>
             Discover Our Portfolio
           </button>
 
@@ -68,10 +69,10 @@ function home() {
               </p>
               <div className='flex items-center space-x-1 my-2'>
                     <div className='flex -space-x-2'>
-                      <img src={prestige1} alt='user1' className='w-15 h-15 rounded-full border-2 border-white'/>
-                      <img src={memories} alt='user2' className='w-15 h-15 rounded-full border-2 border-white'/>
-                      <img src={verodah} alt='user3' className='w-15 h-15 rounded-full border-2 border-white'/>
-                      <img src={verodah} alt='user3' className='w-15 h-15 rounded-full border-2 border-white'/>
+                      <img src={global} alt='user1' className='w-15 h-15 rounded-full border-2 border-white'/>
+                      <img src={global01} alt='user2' className='w-15 h-15 rounded-full border-2 border-white'/>
+                      <img src={global02} alt='user3' className='w-15 h-15 rounded-full border-2 border-white'/>
+                      <img src={global03} alt='user3' className='w-15 h-15 rounded-full border-2 border-white'/>
                       <div className='w-8 h-8 rounded-full bg-gray-300 border-2 border-white flex items-center justify-center text-xs font-semibold text-gray-700 divPlus'>
                         +20
                       </div>
@@ -99,7 +100,7 @@ function home() {
         </div>*/}
       </section>
 
-      <section className='my-[2rem] bg-[#f8f8f8] flex flex-col gap-4 rounded-t-4xl px-[4%] min-h-[40vh] overflow-hidden' id='About'>
+      <section className='my-[2rem] bg-[#f8f8f8] flex flex-col gap-4 rounded-4xl px-[4%] min-h-[40vh] overflow-hidden' id='About'>
         <div className='grid grid-cols-[30%_70%] gap-3 p-4 About' >
           <div className='bg-transparent relative'>
             <img 
@@ -154,35 +155,52 @@ function home() {
       </section>
 
       <ReactLenis root>
-      <section className='my-[2rem] px-[4%] min-h-[200vh] services' id='Services'>
-        <div ref={targetRef} className='relative'>
-          <motion.div className='h-[300px] sticky top-0 flex text-8xl lg:text-[160px] uppercase lg:leading-[140px] px-36 SText'
-           style={{scale:animation[0].scale, opacity: animation[0].opacity}}>
-            <h1 className='w-full h-max'>
-              Our <br/>
-              <span className='ml-20 lg:ml-52'>services</span>
-            </h1>
-          </motion.div>
+        <section className='my-[2rem] px-[4%] min-h-[200vh] services' id='Services'>
+          <div ref={targetRef} className='relative'>
+            <motion.div className='h-[300px] sticky top-0 flex text-8xl lg:text-[160px] uppercase lg:leading-[140px] px-36 SText'
+            style={{scale:animation[0].scale, opacity: animation[0].opacity}}>
+              <h1 className='w-full h-max'>
+                Our <br/>
+                <span className='ml-20 lg:ml-52'>services</span>
+              </h1>
+            </motion.div>
 
-            {services.map((item, index) => (
-                <Fragment key={index}>
-                  <motion.div 
-                  style={{
-                    scale:animation[index + 1]?.scale,
-                    opacity:animation[index + 1]?.opacity,
-                    }}
-                   className='h-screen py-20 sticky top-0'>
-                    <ServicesItem
-                      service={item}
-                    />
-                  </motion.div>
-                  <div className='0'/>
-                </Fragment>
-            ))}
-            <div className='h-dvh'/>
+              {services.map((item, index) => (
+                  <Fragment key={index}>
+                    <motion.div 
+                    style={{
+                      scale:animation[index + 1]?.scale,
+                      opacity:animation[index + 1]?.opacity,
+                      }}
+                    className='h-screen py-20 sticky top-0'>
+                      <ServicesItem
+                        service={item}
+                      />
+                    </motion.div>
+                    <div className='0'/>
+                  </Fragment>
+              ))}
+              <div className='h-[30vh]'/>
+          </div>
+        </section>
+      </ReactLenis>
+
+      <section className='my-[1rem] px-[4%] min-h-[80vh] flex overflow-hidden'>
+        <div className='grid grid-cols-[20%_50%_30%] gap-2 h-fit justify-center items-center Pprojects'>
+         <div className='w-fit flex items-end'>
+          <h2 className='rounded-full border-2 bg-transparent px-4 py-1 hover:border-[#F0BC02] cursor-pointer '>Projects</h2>
+         </div>
+         <h1 className='text-5xl H1Project'>
+           Transforming businesses through digital strategy and user experience
+          </h1>  
+         <div className='flex flex-col gap-2 justify-end'>
+          <p className='text-[#F0BC02]'>(03)</p>
+          <p className=''>
+           Transformations that speak for themselves, proving the power of strategy and design.
+          </p> 
+         </div>   
         </div>
       </section>
-      </ReactLenis>
     </Inner>
   )
 }

@@ -19,6 +19,12 @@
     height: 140px;
     width: 140px;
   }
+  .Pprojects h2, .Pprojects p{
+    font-size: 2em;
+  }
+  .Pprojects h1{
+    font-size: 5em;
+  }
 } 
 
 @media (max-width:768px){
@@ -40,6 +46,9 @@
   }
   .MapIcons{
     grid-template-columns: repeat(3, 1fr);
+  }
+  .Pprojects h1{
+    font-size: 2em;
   }
 }
 
@@ -72,6 +81,13 @@
     gap:15px;
     justify-content: center;
     align-items: center;
+  }
+  .Pprojects{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Pprojects .H1Project{
+    display: none;
   }
 }
 

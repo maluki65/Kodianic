@@ -21,10 +21,17 @@
 
 @media(max-width:626px){
   .serviceCard {
-    grid-template-columns: repeat(1, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .serviceCard h2{
+    font-size: 1.5em;
   }
   .serviceCard  img, .serviceCard  button{
     display: none;
+  }
+  .SForm{
+    display: flex;
   }
 }
 
@@ -32,10 +39,20 @@
   .serviceCard  h2{
     font-size: 2rem;
   }
+  .SForm{
+    padding: 3px 5px;
+    font-size: 5px;
+  }
+  .Sprices p, .Sprices a{
+    font-size: 1em;
+  }
 }
 
 @media(max-width:321px){
   .serviceCard  h2{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+  .Sprices p, .Sprices a{
+    font-size: 13px;
   }
 }
