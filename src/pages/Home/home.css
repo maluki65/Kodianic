@@ -27,6 +27,12 @@
   }
 } 
 
+@media (width:1024px){
+  .services{
+    overflow: hidden;
+  }
+}
+
 @media (max-width:768px){
   .HomeContent h1{
     font-size: 2em;
@@ -49,6 +55,15 @@
   }
   .Pprojects h1{
     font-size: 2em;
+  }
+  .PpCard{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width:768px){
+  .services{
+    overflow: hidden;
   }
 }
 
@@ -102,6 +117,9 @@
   .MapIcons{
     grid-template-columns: repeat(2, 1fr);
   }
+  .PpCard{
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media(max-width:376px) {
@@ -116,3 +134,4 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+

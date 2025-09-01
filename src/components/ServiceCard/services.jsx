@@ -11,7 +11,7 @@ function servicesItem({service}) {
   }
 
   return (
-    <div className='bg-[#fff] grid grid-cols-[60%_40%] mx-auto max-w-[90%] h-full py-5 px-5 gap-2 rounded-3xl shadow-xl overflow-hidden serviceCard'>
+    <div className='bg-[#fff]  grid grid-cols-[60%_40%] overflow-hidden mx-auto max-w-[90%] h-full py-5 px-5 gap-2 rounded-3xl shadow-xl serviceCard'>
       <div className='grid content-center gap-3'>
         <div className='flex items-center justify-between'>
          <h2 className='text-7xl'>{service.heading}</h2>
