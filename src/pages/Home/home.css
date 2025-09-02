@@ -25,6 +25,18 @@
   .Pprojects h1{
     font-size: 5em;
   }
+  .why h2, .Wtitle a, .Wtitle h2{
+    font-size: 1em;
+  }
+  .Wtitle h1{
+    font-size: 7em;
+  }
+  .Wtitle p, .Wtitle a{
+    font-size: 2em;
+  }
+  .wP h2{
+    font-size: 2.2em;
+  }
 } 
 
 @media (width:1024px){
@@ -58,6 +70,9 @@
   }
   .PpCard{
     grid-template-columns: repeat(2, 1fr);
+  }
+  .Wtitle{
+    grid-template-columns: repeat(1, 1fr)
   }
 }
 
@@ -120,6 +135,15 @@
   .PpCard{
     grid-template-columns: repeat(1, 1fr);
   }
+  .Wtitle h1{
+    font-size: 1em;
+  }
+  .Wtitle p, .Wtitle a{
+    font-size: 14px;
+  }
+  .wP h2{
+    font-size: 15px;
+  }
 }
 
 @media(max-width:376px) {
@@ -132,6 +156,15 @@
   }
   .HIcons{
     grid-template-columns: repeat(2, 1fr);
+  }
+  hr{
+    display: none;
+  }
+  .wP{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .Wborder{
+    border: none;
   }
 }
 

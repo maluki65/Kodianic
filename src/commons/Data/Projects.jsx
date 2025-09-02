@@ -1,4 +1,4 @@
-import { verodah, prestige1, memories, Joraf  } from "../../assets";
+import { verodah, prestige, memories, Joraf  } from "../../assets";
 const Projects = [
   {
     name: 'Verodah Freighters',
@@ -18,7 +18,7 @@ const Projects = [
   },
   {
     name: 'Prestige Rides Nairobi',
-    image: prestige1,
+    image: prestige,
     type: 'Car dealership',
     description: 'A sleek website for a Nairobi car dealership, showcasing sales and services with a premium, trust-building experience.',
     TechStack: ['React', 'Node', 'Tailwindcss'],

@@ -9,8 +9,9 @@ function ProjectItems({Projects}) {
     <div className='h-[400px] flex flex-col gap-2 p-1 rounded-md shadow-xl pContainer'>
       <img 
         src={Projects.image}
+        loading='lazy'
         alt={Projects.name}
-        className='rounded-md w-full h-[40%]'
+        className=' object-cover rounded-md w-full h-[40%]'
       />
       <div className='my-2 px-3 flex flex-col gap-2 pTexts'>
         <div className='flex items-center justify-between'>

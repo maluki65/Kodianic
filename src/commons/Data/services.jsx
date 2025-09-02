@@ -41,7 +41,7 @@ const services = [
   },
   {
     heading: 'Maintenance & Technical Support',
-    form: 'Maintenance',
+    form: 'Support',
     StartPrice: 45,
     EndPrice: 100,
     content: 'Keep your digital products running smoothly with our ongoing maintenance and support. We handle updates, security, bug fixes, and performance monitoring so you can focus on growing your business without downtime.',

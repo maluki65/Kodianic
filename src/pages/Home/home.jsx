@@ -13,7 +13,11 @@ import { team1, global, global01, global02, global03 } from '../../assets';
 import useWindowSize from '../../Hooks/WindowSize';
 import { SiVite, SiTailwindcss } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
-import { FaReact, FaArrowRight } from "react-icons/fa";
+import { FaReact, FaArrowRight, FaServer, FaHandshake  } from "react-icons/fa";
+import { IoChevronForward } from "react-icons/io5";
+import { TbTargetArrow } from "react-icons/tb";
+import { LuLayoutPanelLeft } from "react-icons/lu";
+
 
 
 function home() {
@@ -202,7 +206,7 @@ function home() {
          </div>   
         </div>
 
-        <div className='grid grid-cols-3 gap-2 mt-[2rem] PpCard'>
+        <div className='grid grid-cols-3 gap-2 mt-[2.5rem] PpCard'>
           {Projects.slice(0, 3).map((items, index) => (
             <div 
               key={index}>
@@ -219,6 +223,77 @@ function home() {
           >
             view more  <span><FaArrowRight/></span>
           </a>
+      </section>
+
+      <section className='m-[5px] px-[4%] py-[1.5em] min-h-[80vh] overflow-hidden bg-[#104579] rounded-md why'>
+        <h2 className='text-[#F0BC02] flex flex-col gap-1'>(04) <span className='text-sm text-[#F0BC02]'>
+          / Why kodianic?
+        </span></h2>
+
+        <div className='grid grid-cols-2 gap-3 items-center justify-center Wtitle'>
+          <div className='flex flex-col justify-between p-4 gap-2 h-full'>
+            <h1 className='w-full text-6xl text-[#fff]'>
+              Shaping Digital Success
+            </h1>
+            <p className='text-base leading-relaxed font-normal text-[#bcbbbb]'>
+             For over two years, we’ve been a trusted digital partner, proudly serving businesses in Kenya and beyond. Through consistent delivery, reliable support, and a commitment to excellence, we’ve earned the confidence of our community while helping brands grow, adapt, and thrive in a fast-changing digital world.
+            </p>
+
+            <div className='flex items-center gap-4'>
+             <a  
+               href='#Contact' 
+               className='flex  items-center text-[#F0BC02] cursor-pointer hover:underline'>Book a call <span><IoChevronForward/></span>
+              </a>
+              <a  
+               href='#Contact' 
+               className='flex items-center text-[#F0BC02] cursor-pointer hover:underline'>Schedule a metting <span><IoChevronForward/></span>
+              </a>
+            </div>
+          </div>
+          <div className='grid grid-cols-2 pt-[12px] gap-2 px-2 items-center justify-start h-full wP'>
+            <div className='flex flex-col gap-3 border-r-2 border-r-[#fff] Wborder'>
+              <div className='flex flex-col gap-2'>
+               <h2 className='flex items-center text-xl gap-1 text-[#F0BC02]'> <TbTargetArrow /> <span className=''>
+                Strategic Focus
+               </span></h2>
+               <p className='text-[#FFF] text-sm'>
+                Every project begins with a deep understanding of your objectives, ensuring our solutions align with your business outcomes.
+               </p>
+               <hr className='my-[2px] h-[1.5px] font-semibold shadow-2xl mx-2 bg-[#f8f6f6]' />
+              </div>
+
+              <div className='flex flex-col gap-3 '>
+               <h2 className='flex items-center text-xl gap-1 text-[#F0BC02]'> <FaServer/> <span className=''>
+                Reliable Technology
+               </span></h2>
+               <p className='text-[#FFF] text-sm '>
+                 We use proven frameworks and scalable systems to deliver digital products that stand the test of time.
+               </p>
+              </div>              
+            </div>
+
+            <div className='flex flex-col gap-3 top-0'>
+              <div className='flex flex-col gap-2'>
+               <h2 className='flex items-center text-xl gap-1 text-[#F0BC02]'> <LuLayoutPanelLeft /> <span className=''>
+                User-Centered Design
+               </span></h2>
+               <p className='text-[#FFF] text-sm'>
+                Our designs are intuitive, accessible, and tailored to enhance customer engagement across all touchpoints.
+               </p>
+               <hr className='my-[2px] h-[1.5px] font-semibold shadow-2xl mx-2 bg-[#f8f6f6]' />
+              </div>
+
+              <div className='flex flex-col gap-3 '>
+               <h2 className='flex items-center text-xl gap-1 text-[#F0BC02]'> <FaHandshake /> <span className=''>
+                Long-Term Partnership
+               </span></h2>
+               <p className='text-[#FFF] text-sm '>
+                 We build more than products — we build relationships, offering ongoing support and continuous improvement.
+               </p>
+              </div>              
+            </div>
+          </div>
+        </div>
       </section>
     </Inner>
   )
