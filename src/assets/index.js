@@ -13,6 +13,11 @@ import global from './global.jpg';
 import global01 from './global01.jpg';
 import global02 from './global02.jpg';
 import global03 from './global03.jpg';
+import David from './David.jpg';
+import Joyce from './Joyce.jpg';
+import Isaac from './isaac.jpg';
+import JorafLogo from './JorafLogo.png';
+import RidesLogo from './RidesLogo.png';
+import VerodahLogo from './VerodahLogo.jpg';
 
-
-export { Logo, LogoB, LogoS, SVG1, SVG2, SVG3, Joraf, prestige, memories, verodah, team1, global, global01, global02, global03 };
+export { Logo, LogoB, LogoS, SVG1, SVG2, SVG3, Joraf, prestige, memories, verodah, team1, global, global01, global02, global03, David,Joyce, Isaac, JorafLogo, RidesLogo, VerodahLogo };

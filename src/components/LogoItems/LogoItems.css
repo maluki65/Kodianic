@@ -1,0 +1,25 @@
+@media(min-width: 2560px){
+  .Logos img{
+    height: 130px;
+    width: 130px;
+  }
+  .Logos p{
+    font-size: 1.5em;
+  }
+}
+
+@media(max-width: 769px){
+  .Logos img{
+    height: 70px;
+    width: 70px;
+  }
+  .Logos p{
+    font-size: 7px;
+  }
+}
+
+@media(max-width: 625px){
+  .Logos p{
+    font-size: 12px;
+  }
+}

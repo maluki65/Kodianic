@@ -7,17 +7,18 @@ import { Inner } from '../../commons';
 import { Navbar, ServicesItem } from '../../components';
 import services from '../../commons/Data/services';
 import Projects from '../../commons/Data/Projects';
-import { IconsItems, ProjectItems } from '../../components';
+import testimonials from '../../commons/Data/Testimonials';
+import Logos from '../../commons/Data/Logos';
+import { IconsItems, ProjectItems, TestimonialItems, LogoItems } from '../../components';
 import Icons from '../../commons/Data/Icons';
 import { team1, global, global01, global02, global03 } from '../../assets';
 import useWindowSize from '../../Hooks/WindowSize';
-import { SiVite, SiTailwindcss } from "react-icons/si";
+import { SiVite, SiTailwindcss, SiCloudinary  } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { FaReact, FaArrowRight, FaServer, FaHandshake  } from "react-icons/fa";
 import { IoChevronForward } from "react-icons/io5";
 import { TbTargetArrow } from "react-icons/tb";
 import { LuLayoutPanelLeft } from "react-icons/lu";
-
 
 
 function home() {
@@ -259,7 +260,7 @@ function home() {
                <p className='text-[#FFF] text-sm'>
                 Every project begins with a deep understanding of your objectives, ensuring our solutions align with your business outcomes.
                </p>
-               <hr className='my-[2px] h-[1.5px] font-semibold shadow-2xl mx-2 bg-[#f8f6f6]' />
+               <hr className='my-[2px] h-[1.5px] font-semibold shadow-2xl mx-2 bg-[#f8f6f6]'/>
               </div>
 
               <div className='flex flex-col gap-3 '>
@@ -295,6 +296,41 @@ function home() {
           </div>
         </div>
       </section>
+
+      <ReactLenis root>
+        <section className='my-[1rem] px-[4%] py-[1.5rem] min-h-[70vh] flex flex-col gap-2 items-center justify-center overflow-hidden testimonials'>
+          <div className='w-full TesHeading'>
+            <h1 className='text-5xl w-[60%]'>
+              Loved by businesses, and <br/> individuals across the globe.
+            </h1>
+          </div>
+          <div className='my-4 grid grid-cols-3 gap-4 items-center justify-center TesCard'>
+            {testimonials.map((items, index) => (
+              <div 
+                key={index}>
+                  <TestimonialItems
+                    testimonials={items}
+                  />
+                </div>
+            ))}
+          </div>
+          <div className='grid grid-cols-[70%_30%] gap-4 justify-start TesCard'>
+            <div className='grid grid-cols-4 gap-2 items-center justify-center TesLogs'>
+              {Logos.map((items, index) => (
+                <div 
+                  key={index}>
+                  <LogoItems
+                    Logos={items}
+                  />
+                </div>
+              ))}
+            </div>
+            <p className=' text-base'>
+              Reach us at +254 793 685078 to get started, or <span onClick={handleNavigate} className='underline text-[#104579] cursor-pointer'>explore our portfolio</span> to see what we’ve built
+            </p>
+          </div>
+        </section>
+      </ReactLenis>
     </Inner>
   )
 }

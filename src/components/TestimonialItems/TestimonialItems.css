@@ -1,0 +1,16 @@
+@media(min-width: 2560px){
+  .testimony .iconsT{
+    height: 30px;
+    width: 30px;
+  }
+  .testimony p{
+    font-size: 2em;
+  }
+  .testimony h2{
+    font-size: 2em;
+  }
+  .testimony img{
+    height: 120px;
+    width: 120px;
+  }
+}
