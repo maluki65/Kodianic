@@ -43,6 +43,31 @@
   .testimonials p{
     font-size: 2rem;
   }
+  /*.Contact{
+    display: flex;
+    justify-content: start;
+  }*/
+  .Contact h2, .Contact p, .Contact h3{
+    font-size: 2rem;
+  }
+  .Contact h1{
+    font-size: 6rem;
+  }
+  .ContactForm label{
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  .ContactForm input{
+    padding: 1.3rem;
+  }
+  input::placeholder, textarea::placeholder{
+    font-size: 1.8rem;
+  }
+  .ContactForm button{
+    padding: 1rem;
+    font-size: 1.5rem;
+    margin: 1rem 0
+  }
 } 
 
 @media (width:1024px){
@@ -82,6 +107,12 @@
   }
   .TesHeading h1{
     width: 80%;
+  }
+  .Contact{
+    padding: 12px;
+  }
+  .Contact h2, .Contact p, .Contact h3{
+    font-size: 1rem;
   }
 }
 
@@ -135,6 +166,9 @@
   .TesCard{
     display: flex;
     flex-wrap: wrap;
+  }
+  .Ccontainer{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -192,6 +226,9 @@
   }
   .TesHeading h1{
     font-size: 1.6rem;
+  }
+  .inputC{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

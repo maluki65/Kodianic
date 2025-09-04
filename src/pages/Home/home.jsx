@@ -1,4 +1,4 @@
-import React, { useRef, Fragment } from 'react';
+import React, { useRef, Fragment, useState } from 'react';
 import './home.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -15,13 +15,19 @@ import { team1, global, global01, global02, global03 } from '../../assets';
 import useWindowSize from '../../Hooks/WindowSize';
 import { SiVite, SiTailwindcss, SiCloudinary  } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
-import { FaReact, FaArrowRight, FaServer, FaHandshake  } from "react-icons/fa";
+import { FaReact, FaArrowRight, FaServer, FaHandshake, FaPhoneAlt  } from "react-icons/fa";
 import { IoChevronForward } from "react-icons/io5";
 import { TbTargetArrow } from "react-icons/tb";
 import { LuLayoutPanelLeft } from "react-icons/lu";
+import { MdEmail } from "react-icons/md";
 
 
 function home() {
+  const [name, setName] = useState('');
+  const [Email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [description, setDescription] = useState('');
+
   const navigate = useNavigate();
   const { size } = useWindowSize();
   const targetRef = useRef(null);
@@ -45,7 +51,18 @@ function home() {
   }));
 
   const handleNavigate = () => {
-    navigate('/Portofolio');
+    navigate('/Portfolio');
+  }
+  const payload = {
+    name: name,
+    phone: phone,
+    Email: Email,
+    description: description
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(payload);
   }
 
 
@@ -201,10 +218,18 @@ function home() {
           </h1>  
          <div className='flex flex-col gap-2 justify-end'>
           <p className='text-[#F0BC02]'>(03)</p>
-          <p className=''>
-           Transformations that speak for themselves, proving the power of strategy and design.
+          <p className='gap-2'>
+           Transformations that speak for themselves, proving the power of strategy and design.<span className=''>
+            <a 
+              onClick={handleNavigate}
+              className='flex items-center gap-2 mt-2 cursor-pointer text-[#104579] hover:underline hover:text-[#F0BC02] justify-end'
+                >
+                  view more  <span><FaArrowRight/></span>
+            </a>
+           </span>
           </p> 
-         </div>   
+         </div>  
+          
         </div>
 
         <div className='grid grid-cols-3 gap-2 mt-[2.5rem] PpCard'>
@@ -217,13 +242,6 @@ function home() {
             </div>
           ))}
         </div>
-
-        <a 
-        onClick={handleNavigate}
-          className='flex items-center gap-2 mt-2 cursor-pointer text-[#104579] hover:underline hover:text-[#F0BC02] justify-end'
-          >
-            view more  <span><FaArrowRight/></span>
-          </a>
       </section>
 
       <section className='m-[5px] px-[4%] py-[1.5em] min-h-[80vh] overflow-hidden bg-[#104579] rounded-md why'>
@@ -326,11 +344,101 @@ function home() {
               ))}
             </div>
             <p className=' text-base'>
-              Reach us at +254 793 685078 to get started, or <span onClick={handleNavigate} className='underline text-[#104579] cursor-pointer'>explore our portfolio</span> to see what we’ve built
+              Reach us at +254 793 685078 to get started, or <span onClick={handleNavigate} className='underline text-[#F0BC02] cursor-pointer'>explore our portfolio</span> to see what we’ve built
             </p>
           </div>
         </section>
       </ReactLenis>
+
+      <section className='my-[1rem] px-[4%] min-h-[70vh] bg-[#f7f7f7] flex justify-center items-center overflow-hidden Contact' id='Contact'>
+        <div className='grid grid-cols-2 gap-3 Ccontainer'>
+          <div className='flex flex-col gap-2 space-y-2'>
+            <h2 className='text-[#6e6e6e] text-sm'>
+              WE'RE HERE TO HELP YOU
+            </h2>
+            <h1 className='text-5xl'>Let’s <span className=' font-semibold'>discuss</span> <br/> your technology needs.</h1>
+            <p className='text-base text-[#6e6e6e]'>
+              Need solutions created with your unique needs in mind? We’re here to help—connect with us today.
+            </p>
+            <div className='flex items-center gap-2'>
+              <MdEmail className='text-[#104579]' size={30}/>
+              <div className='flex flex-col gap-1'>
+                <h3 className='text-[#6e6e6e] text-sm'>
+                  E-mail
+                </h3>
+                <p className='text-[#444444] '>
+                 kodianic@gmail.com
+                </p>
+              </div>
+            </div>
+            <div className='flex items-center gap-2'>
+              <FaPhoneAlt className='text-[#104579]' size={30}/>
+              <div className='flex flex-col gap-1'>
+                <h3 className='text-[#6e6e6e] text-sm'>
+                  Phone number
+                </h3>
+                <p className='text-[#444444] '>
+                 +254 793685078
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className='shadow-md rounded-md bg-[#fff] py-3 px-4'>
+            <form onSubmit={handleSubmit} className='flex flex-col space-y-3 ContactForm'>
+              <div className='flex flex-col gap-1'>
+                <label className='font-medium flex text-[#6e6e6e] text-sm'>Name:</label>
+                <input 
+                 value={name}
+                 onChange={(e) => setName(e.target.value)}
+                 placeholder='John Smith'
+                 required
+                 className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
+                />
+              </div>
+              <div className='grid grid-cols-2 gap-2 items-center w-full inputC'>
+              <div className='flex flex-col gap-1'>
+                <label className='font-medium flex text-[#6e6e6e] text-sm'>E-mail:</label>
+                <input 
+                 value={Email}
+                 onChange={(e) => setEmail(e.target.value)}
+                 placeholder='example@gmail.com'
+                 required
+                 className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
+                />
+              </div>
+              <div className='flex flex-col gap-1'>
+                <label className='font-medium flex text-[#6e6e6e] text-sm'>Phone number:</label>
+                <input 
+                 value={phone}
+                 onChange={(e) => setPhone(e.target.value)}
+                 placeholder='0793685078'
+                 required
+                 className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
+                />
+              </div>
+              </div>
+              <div className='flex flex-col gap-1'>
+                <label className='font-medium flex text-[#6e6e6e] text-sm'>Description:</label>
+                <textarea
+                 value={description}
+                 onChange={(e) => setDescription(e.target.value)}
+                 rows={5}
+                 placeholder='Description'
+                 required
+                 className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
+                />
+              </div>
+              <button 
+                className='w-fit flex cursor-pointer items-center gap-3 py-2 px-3 text-[#fff] rounded-full bg-[#104579]'>
+                  <span className='bg-[#fff] text-[#104579] p-2 rounded-full'>
+                   <FaArrowRight/>
+                  </span> 
+                    Get a solution
+                </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </Inner>
   )
 }

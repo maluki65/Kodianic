@@ -7,7 +7,7 @@ function servicesItem({service}) {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate('/Portofolio')
+    navigate('/Portfolio')
   }
 
   return (

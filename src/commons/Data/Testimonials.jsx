@@ -11,7 +11,7 @@ const testimonials = [
     description: 'The site beautifully tells our story and showcases our coconut products. The creativity and attention to detail made it feel like a true part of our brand.',
     image: Joyce,
     name: 'Joyce Lekoton',
-    position: 'Joyce Lekoton, CEO'
+    position: 'Joraf, CEO'
   },
   {
     description: 'The dealership’s website is sleek, modern, and easy to navigate. Customers say it feels effortless to browse our cars online, which has greatly improved engagement.',

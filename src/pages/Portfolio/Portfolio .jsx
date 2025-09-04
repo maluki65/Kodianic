@@ -1,15 +1,15 @@
 import React from 'react';
-import './Portofolio.css';
+import './Portfolio .css';
 import { Navbar } from '../../components';
 import { Inner } from '../../commons';
 
-function Portofolio() {
+function Portfolio () {
   return (
     <Inner>
       <Navbar/>
-      <div>portfolio</div>
+      <div>Portfolio</div>
     </Inner>
   )
 }
 
-export default Portofolio
+export default Portfolio 

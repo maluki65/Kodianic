@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import { useLocation } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route,  } from 'react-router-dom';
-import { Home, Portofolio } from './pages';
+import { Home, Portfolio } from './pages';
 import { motion, AnimatePresence } from 'framer-motion'
 import ScrollToHashElement from './components/ScrollToHashElement';
 
@@ -14,7 +14,7 @@ function AnimatedRoutes () {
     <AnimatePresence mode='wait'>      
       <Routes location={location} key={location.pathname} >
         <Route path='/' element={<Home/>} />
-        <Route path='/Portofolio' element={<Portofolio/>} />
+        <Route path='/Portfolio' element={<Portfolio/>} />
       </Routes>
     </AnimatePresence>
   );
