@@ -1,6 +1,6 @@
 @media (min-width:2560px) {
   .pContainer{
-    height: fit-content;
+    max-height: fit-content;
   }
   .pContainer img{
     height: 50%;
@@ -10,6 +10,11 @@
   }
 }
 
+@media(max-width: 376px){
+  .pContainer{
+    height: 450px;
+  }
+}
 @media(max-width: 320px) {
   .type{
     font-size: 11px;

@@ -4,12 +4,11 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ReactLenis } from 'lenis/react';
 import { Inner } from '../../commons';
-import { Navbar, ServicesItem } from '../../components';
+import { Navbar, ServicesItem, IconsItems, ProjectItems, TestimonialItems, LogoItems, Footer } from '../../components';
 import services from '../../commons/Data/services';
 import Projects from '../../commons/Data/Projects';
 import testimonials from '../../commons/Data/Testimonials';
 import Logos from '../../commons/Data/Logos';
-import { IconsItems, ProjectItems, TestimonialItems, LogoItems } from '../../components';
 import Icons from '../../commons/Data/Icons';
 import { team1, global, global01, global02, global03 } from '../../assets';
 import useWindowSize from '../../Hooks/WindowSize';
@@ -439,6 +438,8 @@ function home() {
           </div>
         </div>
       </section>
+
+      <Footer/>
     </Inner>
   )
 }

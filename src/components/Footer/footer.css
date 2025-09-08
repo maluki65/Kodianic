@@ -1,0 +1,45 @@
+@media(min-width:2560px){
+  .Logos{
+    max-height: fit-content;
+  }
+  .Logos img{
+    height: 150px;
+    width: 150px;
+  }
+  .Logos h1{
+    font-size: 3rem;
+  }
+  h2, ul li, p, .termsF a{
+    font-size: 2em;
+  }
+}
+
+@media(max-width: 768px){
+  .Logos h1{
+    font-size: 1em;
+  }
+  h2, ul li, p, .termsF a{
+    font-size: 11px;
+  }
+}
+
+@media(max-width:426px){
+  .LogosC{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .LogosLink{
+    justify-content: start;
+    align-items: start;
+  }
+  h2, ul li, p, .termsF a{
+    font-size: 1em
+  }
+  .CopyRight{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .CopyRight p, .CopyRight a {
+    font-size: 12px;
+  }
+}

@@ -77,8 +77,8 @@ function navbar() {
         </div>
 
         <div className='collaboration'>
-          <li className='text-sm underline font-semibold cursor-pointer hover:text-[#104579]'>
-            Open for collaboration
+          <li  className='text-sm underline font-semibold cursor-pointer hover:text-[#104579]'>
+            <a href='#Contact'>Open for collaboration</a>
           </li>
         </div>
 
@@ -103,7 +103,7 @@ function navbar() {
 
         <div className='collaboration'>
           <p className='text-sm underline font-semibold cursor-pointer hover:text-[#104579]'>
-            Discuss a project
+            <a href='#Contact'>Discuss a project</a>
           </p>
         </div>
 
