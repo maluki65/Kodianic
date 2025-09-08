@@ -4,7 +4,6 @@ import { Logo } from '../../assets'
 import { FaInstagram, FaFacebook, FaTiktok, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { FaXTwitter, FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { ReactLenis } from 'lenis/react';
 
 
 
