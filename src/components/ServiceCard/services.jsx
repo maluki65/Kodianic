@@ -6,8 +6,10 @@ import { useNavigate } from 'react-router-dom';
 function servicesItem({service}) {
   const navigate = useNavigate();
 
+  const toSlug = (text) => text.trim().toLowerCase().replace(/\s+/g, "-").replace(/\//g, "-").replace(/&/g, "and");
+
   const handleNavigate = () => {
-    navigate('/Portfolio')
+    navigate(`service/${toSlug(service.heading)}`, {state:{service}});
   }
 
   return (

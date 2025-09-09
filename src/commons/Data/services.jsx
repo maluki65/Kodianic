@@ -1,59 +1,115 @@
 const services = [
   {
-    heading: 'Web design & development ',
+    id: 1,
+    heading: 'Web design & development',
     form: 'website',
     StartPrice: 150,
     EndPrice: 1500,
     content: 'Grow your online presence with professional web design and development services. We create fast, mobile-friendly, SEO-ready websites that are visually stunning and built to convert visitors into customers.',
-    address: 'https://www.fvtc.edu/Portals/0/POSImages/Programs/it-web-development-and-design-specialist-lg.jpg'
+    ServiceDetail: 'We create modern, responsive websites tailored to your brand and goals. From simple landing pages to complex e-commerce platforms, our designs combine aesthetics with functionality. Every site is optimized for performance, mobile-first, and built to grow with your business.',
+    address: 'https://www.fvtc.edu/Portals/0/POSImages/Programs/it-web-development-and-design-specialist-lg.jpg',
+    Basic: ['1 - 3 page responsive website', 'Pre-made template customization', 'Basic contact design', 'Mobile-friendly design'],
+    BPrice: '$150 – $400',
+    Standard: ['4 -8 custom-designed pages', 'CMS intergrated (WordPress/React CMS)', 'SEO-friendly structure', 'Blog setup & social media links','Basic animations'],
+    SPrice: '$500 – $900',
+    Advanced: ['10+ fully custom pages', 'E-commerce or booking system integration', 'Custom UI/UX design', 'Advanced animations & interactivity', 'Performance optimization'],
+    APrice: '$1000 – $1500'
   },
   {
-    heading: 'Saas development ',
+    id: 2,
+    heading: 'Saas development',
     form: 'Saas',
     StartPrice: 380,
     EndPrice: 2500,
     content: 'Launch and scale faster with our SaaS application development services. From MVP to enterprise solutions, we design secure, cloud-based platforms that are user-friendly, scalable, and tailored to your business needs.',
-    address: 'https://cdnwebkul.webkul.com/wp-content/uploads/2021/06/saas-development.png'
+    ServiceDetail: 'Transform your idea into a powerful SaaS product with scalable, secure, and user-friendly architecture. Whether it’s an MVP to test the market or a fully-featured platform, we build with flexibility and performance in mind. Our team ensures seamless integration, reliable cloud deployment, and future-ready solutions.',
+    address: 'https://cdnwebkul.webkul.com/wp-content/uploads/2021/06/saas-development.png',
+    Basic: ['MVP (minimum viable product) setup','User authentication (sign-up/login)', 'Basic dashboard', 'Essential CRUD operations'],
+    BPrice: '$380 – $800',
+    Standard: ['Multi-user roles & permissions', 'Payment integration (Stripe/PayPal/M-pesa)', 'API connections', 'Secure database design'],
+    SPrice: '$900 – $1500',
+    Advanced: ['Scalable SaaS architecture', 'Advanced analytics & reporting', 'Subscription billing system', 'Cloud deployment (AWS, GCP, Azure)', 'Continuous integration & testing'],
+    APrice: '$1600 – $2500'
   },
   {
+    id: 3,
     heading: 'API intergration',
     form: 'API',
     StartPrice: 50,
     EndPrice: 250,
     content: 'Simplify your business processes with custom API integration services. We connect your apps, platforms, and third-party tools to create seamless data flow, automation, and real-time connectivity—so your systems work smarter, not harder.',
-    address: 'https://www.manchesterdigital.com/storage/10104/What-is-API-and-API-Integration-Manc-Digital-feat.png'
+    ServiceDetail: 'Streamline your operations by connecting your tools, platforms, and services with custom API integrations. From payments and CRMs to third-party data providers, we handle the technical side so your systems work in harmony. Expect efficiency, security, and scalability built right into your workflows.',
+    address: 'https://www.manchesterdigital.com/storage/10104/What-is-API-and-API-Integration-Manc-Digital-feat.png',
+    Basic: ['Single API integration (e.g., payment, weather)', 'Basic error handling'],
+    BPrice: '$50 – $90',
+    Standard: ['Multiple APIs integration', 'Data validation & secure handling', 'Documentation'],
+    SPrice: '$100 – $170',
+    Advanced: ['Complex third-party API integrations', 'Custom-built middleware/bridge', 'Performance monitoring & error logging'],
+    APrice: '$180 – $250'
   },
   {
+    id: 4,
     heading: 'UI/UX Design',
     form: 'UI/UX',
     StartPrice: 70,
     EndPrice: 500,
     content: 'Craft engaging, intuitive user experiences with our UI/UX design services. We design interfaces that blend creativity with usability, ensuring your product is visually stunning, user-friendly, and conversion-focused.',
-    address: 'https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1703143232/catalog/1737732519673028608/jzdiee4a2s3sfira3vfq.jpg'
+    ServiceDetail: 'Great design goes beyond looks—it shapes the entire user experience. We craft interfaces that are visually appealing, intuitive, and designed to drive engagement. Through wireframes, prototypes, and usability testing, we ensure every interaction feels effortless and impactful.',
+    address: 'https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1703143232/catalog/1737732519673028608/jzdiee4a2s3sfira3vfq.jpg',
+    Basic: ['Wireframes for up to 3 screens/pages', 'Simple design system (colors, typography)'],
+    BPrice: '$70 – $150',
+    Standard: ['Interactive prototypes (Figma/Adobe XD)', 'UI kit & reusable components', 'Usability testing'],
+    SPrice: '$200 – $350',
+    Advanced: ['Full product UI/UX design (10+ screens/pages)', 'Design system + documentation', 'Advanced animations & transitions'],
+    APrice: '$400 – $500'
   },
   {
+    id: 5,
     heading: 'Digital Marketing & SEO',
     form: 'Marketing',
     StartPrice: 110,
     EndPrice: 800,
     content: 'Boost your visibility and reach with data-driven marketing strategies. From SEO optimization to targeted campaigns, we help you attract, engage, and convert your audience while growing your brand authority online.',
-    address: 'https://algorizon.com/wp-content/uploads/2024/09/seo.jpg'
+    ServiceDetail: 'Boost your visibility and attract the right audience with targeted digital marketing and SEO strategies. From on-page optimization and keyword research to content creation and ad campaigns, we focus on driving measurable results. Our approach blends creativity with analytics to grow your online presence sustainably.',
+    address: 'https://algorizon.com/wp-content/uploads/2024/09/seo.jpg',
+    Basic: ['Keyword research', 'On-page SEO setup (titles, meta, alt text)', '1 blog/article optimized'],
+    BPrice:'$110 – $250',
+    Standard: ['5–10 keyword-targeted blog posts', 'Social media strategy & scheduling', 'Backlink building', 'Google Analytics setup'],
+    SPrice: '$300 – $500',
+    Advanced: ['Full SEO campaign (technical + content + backlinks)', 'Paid ad campaigns (Google/Facebook)', 'Monthly performance reports', 'Conversion rate optimization'],
+    APrice: '$600 – $800'
   },
   {
+    id: 6,
     heading: 'Maintenance & Technical Support',
     form: 'Support',
     StartPrice: 45,
     EndPrice: 100,
     content: 'Keep your digital products running smoothly with our ongoing maintenance and support. We handle updates, security, bug fixes, and performance monitoring so you can focus on growing your business without downtime.',
-    address: 'https://www.vertexplus.com/custom-mobile-app-development/images/application-supporttomaintenace-img.jpg'
+    ServiceDetail: 'Technology should work for you, not against you. We provide proactive maintenance, timely updates, and reliable technical support to keep your systems secure and efficient. With dedicated monitoring and fast response times, you can focus on business while we handle the backend.',
+    address: 'https://www.vertexplus.com/custom-mobile-app-development/images/application-supporttomaintenace-img.jpg',
+    Basic: ['Monthly security updates', 'Bug fixes & patches', 'Basic uptime monitoring'],
+    BPrice: '$45 – $60',
+    Standard: ['Priority support (48 hrs response)', 'Minor feature updates', 'Backup & restore service'],
+    SPrice: '$70 – $85',
+    Advanced: ['24/7 support', 'Proactive monitoring & optimization', 'Dedicated support hours/month'],
+    APrice: '$90 – $100'
   },
   {
-    heading: 'IT consultancy ',
+    id: 7,
+    heading: 'IT consultancy',
     form: 'consultancy',
     StartPrice: 75,
     EndPrice: 150,
     content: 'Get expert IT consultancy services that align technology with your business goals. We analyze your systems, improve workflows, and design IT strategies that boost efficiency, security, and scalability—helping you save costs and drive growth.',
-    address: 'https://alphawonders.com/assets/img/conslt_sppt/itconsulting.png'
+    ServiceDetail: 'Navigating technology choices can be overwhelming—we make it simple. Our consultancy services help you choose the right tools, strategies, and infrastructures for long-term success. From one-off advice to comprehensive IT roadmaps, we align tech decisions with your business goals.',
+    address: 'https://alphawonders.com/assets/img/conslt_sppt/itconsulting.png',
+    Basic: ['1-hour consultation call', 'Basic IT strategy advice'],
+    BPrice: '$75 – $90',
+    Standard: ['2–3 strategy sessions', 'Technology stack recommendations', 'Basic documentation/report'],
+    SPrice: '$100 – $120',
+    Advanced: ['Full IT audit & roadmap', 'Vendor/tool selection guidance', 'Ongoing advisory sessions'],
+    APrice: '$130 – $150'
   }
 ]
 

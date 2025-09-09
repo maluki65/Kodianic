@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import { useLocation } from 'react-router-dom';
-import { BrowserRouter as Router, Routes, Route,  } from 'react-router-dom';
-import { Home, Portfolio } from './pages';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Home, Portfolio, ServicesDetails } from './pages';
 import { motion, AnimatePresence } from 'framer-motion'
 import ScrollToHashElement from './components/ScrollToHashElement';
 
@@ -15,6 +15,7 @@ function AnimatedRoutes () {
       <Routes location={location} key={location.pathname} >
         <Route path='/' element={<Home/>} />
         <Route path='/Portfolio' element={<Portfolio/>} />
+        <Route path='/service/:heading' element={<ServicesDetails/>} />
       </Routes>
     </AnimatePresence>
   );
