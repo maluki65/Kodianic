@@ -1,0 +1,34 @@
+@media(max-width: 1024px){
+  .Portfolio h1{
+    width: 70%;
+  }
+}
+
+@media(max-width: 768px){
+  .CImgs{
+    columns: 3;
+  }
+}
+
+@media(max-width: 626px){
+  .Portfolio h1{
+    width: 80%;
+    font-size: 1.5em;
+  }
+}
+
+@media(max-width: 426px){
+  .CImgs{
+    columns: 2;
+  }
+  .PIcons{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+} 
+
+@media(max-width: 375px){
+  .Portfolio h1{
+    width: 100%;
+  }
+}

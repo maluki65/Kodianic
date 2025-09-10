@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ServicesDetails.css';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { Inner } from '../../commons';
-import { Navbar, Service404 } from '../../components';
+import { Navbar, Service404, ReviewItems, Footer } from '../../components';
 import services from '../../commons/Data/services';
+import testimonials from '../../commons/Data/Testimonials';
 import { FaArrowLeft } from "react-icons/fa";
 import { IoMdCheckmark } from "react-icons/io";
 
 
 function ServicesDetails() {
+  const [name, setName] = useState('');
+  const [Email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [description, setDescription] = useState('');
+  const [budget, setBudget] = useState('');
+
+
   const toSlug = (text) => text.trim().toLowerCase().replace(/\s+/g, "-").replace(/\//g, "-").replace(/&/g, "and");
   
   const { heading: slug } = useParams();
@@ -23,9 +31,25 @@ function ServicesDetails() {
 
   const service = ServiceFormState || services.find((s) => toSlug(s.heading) === slug);
 
+  const serviceName = service.heading;
+
+  const payload = {
+    Name: name,
+    Phone: phone,
+    Email: Email,
+    Description: description,
+    Budget: budget,
+    ServiceName: serviceName
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(payload);
+  }
+
   return (
     <Inner>
-      <section >
+      <section>
         <Navbar/>
         {!service ? (
           <Service404/>
@@ -37,7 +61,7 @@ function ServicesDetails() {
               <FaArrowLeft/> {service.heading}
             </a>
 
-            <div className='grid grid-cols-2 gap-3 rounded-md shadow-md my-[1.5rem] mx-2'>
+            <div className='grid grid-cols-2 gap-3 rounded-md my-[1.5rem] mx-2 overflow-hidden bg-[#f8f8f8] reviewContent'>
               <div className='flex flex-col gap-2 border-r-1 border-[#e9e7e7]'>
                 <img 
                   src={service.address}
@@ -110,7 +134,84 @@ function ServicesDetails() {
                   </div>
                 </div>
               </div>
+              <div className='bg-[#fafafa] flex flex-col rounded-md gap-3 py-3 px-5'>
+                <form onSubmit={handleSubmit} className='flex flex-col space-y-3 ContactForm'>
+                  <div className='flex flex-col gap-1'>
+                    <label className='font-medium flex text-[#6e6e6e] text-sm'>Name:</label>
+                    <input 
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder='John Smith'
+                      required
+                      className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
+                    />
+                  </div>
+                  <div className='grid grid-cols-2 gap-2 items-center w-full inputC'>
+                    <div className='flex flex-col gap-1'>
+                      <label className='font-medium flex text-[#6e6e6e] text-sm'>E-mail:</label>
+                      <input 
+                        value={Email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder='example@gmail.com'
+                        required
+                        className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
+                      />
+                    </div>
+                    <div className='flex flex-col gap-1'>
+                      <label className='font-medium flex text-[#6e6e6e] text-sm'>Phone number:</label>
+                      <input 
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder='0793685078'
+                        required
+                        className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
+                      />
+                    </div>
+                  </div>
+                  <div className='flex flex-col gap-1'>
+                    <label className='font-medium flex text-[#6e6e6e] text-sm'>Your Budget (optional):</label>
+                    <div className='flex gap-0 items-center'>
+                      <p className='p-2 border-1 border-[#e8e7e7] text-[#757373]'>$</p>
+                      <input 
+                      value={budget}
+                      step={1}
+                      onChange={(e) => setBudget(e.target.value)}
+                      placeholder={`min-amount $${service.StartPrice}`}
+                      className='w-full p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded-r bg-[#eae8e8]'
+                    />
+                    </div>
+                  </div>
+                  <div className='flex flex-col gap-1'>
+                    <label className='font-medium flex text-[#6e6e6e] text-sm'>Description:</label>
+                    <textarea
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      rows={5}
+                      placeholder='Description'
+                      required
+                      className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
+                    />
+                  </div>
+                  <button 
+                    className='w-full cursor-pointer  py-2 px-3 text-[#fff] rounded-md bg-[#104579]'>
+                        Get a solution
+                    </button>
+                </form>
+                <hr className='my-[2em] h-[1.5px] font-semibold shadow-2xl mx-2 bg-[#ededed]'/>
+                
+                <div className='flex flex-col gap-2'>
+                  <h1 className='text-xl font-semibold CReview'>Customer Reviews</h1>
+                  {testimonials.map((items, index) => (
+                    <div 
+                      key={index}>
+                        <ReviewItems 
+                          testimonials={items}/>
+                      </div>
+                  ))}
+                </div>
+              </div>
             </div>
+            <Footer/>
           </>
         )}
       </section>

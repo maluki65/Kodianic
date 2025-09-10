@@ -6,3 +6,5 @@ export { default as TestimonialItems } from './TestimonialItems/TestimonialItems
 export { default as LogoItems } from './LogoItems/LogoItems';
 export { default as Footer } from './Footer/footer';
 export { default as Service404 } from './404ServiceError/404ServiceError';
+export { default as ReviewItems } from './Reviews/Reviews';
+export { default as PortfolioItems } from './PortfolioItems/PortfolioItems';

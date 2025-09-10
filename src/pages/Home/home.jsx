@@ -12,7 +12,7 @@ import Logos from '../../commons/Data/Logos';
 import Icons from '../../commons/Data/Icons';
 import { team1, global, global01, global02, global03 } from '../../assets';
 import useWindowSize from '../../Hooks/WindowSize';
-import { SiVite, SiTailwindcss, SiCloudinary  } from "react-icons/si";
+import { SiVite, SiTailwindcss } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { FaReact, FaArrowRight, FaServer, FaHandshake, FaPhoneAlt  } from "react-icons/fa";
 import { IoChevronForward } from "react-icons/io5";

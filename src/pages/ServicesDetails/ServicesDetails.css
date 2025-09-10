@@ -1,0 +1,11 @@
+@media(min-width: 2560px){
+  .CReview{
+    font-size: 2em;
+  }
+}
+
+@media(max-width: 768px){
+  .reviewContent{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

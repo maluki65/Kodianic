@@ -1,0 +1,41 @@
+@media(min-width: 2560px){
+  .review img{
+    height: 120px;
+    width: 120px;
+  }
+  .review h1{
+    font-size: 2em;
+  }
+  .review h1 span{
+    font-size: 1em;
+  }
+  .country{
+    padding: 3px 10px;
+  }
+}
+
+@media(max-width: 425px){
+  .review img{
+    height: 70px;
+    width: 70px;
+  }
+  .review h1{
+    font-size: 1em;
+  }
+}
+
+@media(max-width: 425px){
+  .review img{
+    height: 50px;
+    width: 50px;
+  }
+  .review h1{
+    font-size: 12px;
+  }
+  .country{
+    font-size: 12px;
+  }
+  .pReview{
+    font-size: 13px;
+  }
+}
