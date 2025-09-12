@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import './ServicesDetails.css';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { Inner } from '../../commons';
-import { Navbar, Service404, ReviewItems, Footer } from '../../components';
+import { Navbar, Service404, ReviewItems, Footer, Loader, ServiceLoader } from '../../components';
 import services from '../../commons/Data/services';
 import testimonials from '../../commons/Data/Testimonials';
 import { FaArrowLeft } from "react-icons/fa";
 import { IoMdCheckmark } from "react-icons/io";
+import axios from 'axios';
 
 
 function ServicesDetails() {
@@ -15,6 +16,9 @@ function ServicesDetails() {
   const [phone, setPhone] = useState('');
   const [description, setDescription] = useState('');
   const [budget, setBudget] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [success, setSucces] = useState('');
+  const [error, setError] = useState('');
 
 
   const toSlug = (text) => text.trim().toLowerCase().replace(/\s+/g, "-").replace(/\//g, "-").replace(/&/g, "and");
@@ -33,18 +37,46 @@ function ServicesDetails() {
 
   const serviceName = service.heading;
 
-  const payload = {
-    Name: name,
-    Phone: phone,
-    Email: Email,
-    Description: description,
-    Budget: budget,
-    ServiceName: serviceName
-  }
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(payload);
+    setIsLoading(true);
+
+    try {
+      const payload = {
+        name,
+        phone,
+        Email,
+        description,
+        budget,
+        serviceName
+      }
+
+      console.log(payload);
+
+      await axios.post('http://localhost:5000/v1/api/serviceRequest', payload);
+      //await new Promise((resolve) => setTimeout(resolve, 5000));
+
+      setIsLoading(false);
+      setSucces('Service request submitted successfully!. You will be contacted within 2 working days');
+
+      setName('');
+      setPhone('');
+      setEmail('');
+      setDescription('')
+      setBudget('');
+
+      setTimeout(() => {
+        setSucces('')
+      }, 5000)
+
+    } catch (error) {
+      setIsLoading(false);
+      console.error('Error submitting service request, please try again or contact support', error);
+      setError('Error submitting service request, please try again or contact support')
+      setTimeout(() => {
+        setError('')
+      }, 5000);
+    }
   }
 
   return (
@@ -134,68 +166,90 @@ function ServicesDetails() {
                   </div>
                 </div>
               </div>
-              <div className='bg-[#fafafa] flex flex-col rounded-md gap-3 py-3 px-5'>
-                <form onSubmit={handleSubmit} className='flex flex-col space-y-3 ContactForm'>
-                  <div className='flex flex-col gap-1'>
-                    <label className='font-medium flex text-[#6e6e6e] text-sm'>Name:</label>
-                    <input 
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      placeholder='John Smith'
-                      required
-                      className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
-                    />
-                  </div>
-                  <div className='grid grid-cols-2 gap-2 items-center w-full inputC'>
-                    <div className='flex flex-col gap-1'>
-                      <label className='font-medium flex text-[#6e6e6e] text-sm'>E-mail:</label>
-                      <input 
-                        value={Email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder='example@gmail.com'
-                        required
-                        className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
-                      />
-                    </div>
-                    <div className='flex flex-col gap-1'>
-                      <label className='font-medium flex text-[#6e6e6e] text-sm'>Phone number:</label>
-                      <input 
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        placeholder='0793685078'
-                        required
-                        className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
-                      />
-                    </div>
-                  </div>
-                  <div className='flex flex-col gap-1'>
-                    <label className='font-medium flex text-[#6e6e6e] text-sm'>Your Budget (optional):</label>
-                    <div className='flex gap-0 items-center'>
-                      <p className='p-2 border-1 border-[#e8e7e7] text-[#757373]'>$</p>
-                      <input 
-                      value={budget}
-                      step={1}
-                      onChange={(e) => setBudget(e.target.value)}
-                      placeholder={`min-amount $${service.StartPrice}`}
-                      className='w-full p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded-r bg-[#eae8e8]'
-                    />
-                    </div>
-                  </div>
-                  <div className='flex flex-col gap-1'>
-                    <label className='font-medium flex text-[#6e6e6e] text-sm'>Description:</label>
-                    <textarea
-                      value={description}
-                      onChange={(e) => setDescription(e.target.value)}
-                      rows={5}
-                      placeholder='Description'
-                      required
-                      className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
-                    />
-                  </div>
-                  <button 
-                    className='w-full cursor-pointer  py-2 px-3 text-[#fff] rounded-md bg-[#104579]'>
-                        Get a solution
-                    </button>
+              <div className='bg-[#fafafa] flex flex-col  rounded-md gap-3 py-3 px-5'>
+                <form onSubmit={handleSubmit} className='flex  flex-col space-y-3 ContactForm'>
+                  {isLoading ? (
+                    <Loader/>
+                  ): (
+                    <>
+                      {/*On success or Error*/}
+                      <div className='my-4 flex flex-col gap-2'>
+                        {success && (
+                          <div className="text-green-600 bg-green-100 border border-green-400 p-2 rounded mb-3">
+                            {success}
+                          </div>
+                        )}
+
+                        {error && (
+                          <div className="text-red-600 bg-red-100 border border-red-400 p-2 rounded mb-3">
+                            {error}
+                          </div>
+                        )}
+                      </div>
+                      <div className='flex flex-col gap-1'>
+                        <label className='font-medium flex text-[#6e6e6e] text-sm'>Name:</label>
+                        <input 
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          placeholder='John Smith'
+                          required
+                          className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
+                        />
+                      </div>
+                      <div className='grid grid-cols-2 gap-2 items-center w-full inputC'>
+                        <div className='flex flex-col gap-1'>
+                          <label className='font-medium flex text-[#6e6e6e] text-sm'>E-mail:</label>
+                          <input 
+                            value={Email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder='example@gmail.com'
+                            required
+                            className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
+                          />
+                        </div>
+                        <div className='flex flex-col gap-1'>
+                          <label className='font-medium flex text-[#6e6e6e] text-sm'>Phone number:</label>
+                          <input 
+                            value={phone}
+                            type='number'
+                            onChange={(e) => setPhone(e.target.value)}
+                            placeholder='0793685078'
+                            required
+                            className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
+                          />
+                        </div>
+                      </div>
+                      <div className='flex flex-col gap-1'>
+                        <label className='font-medium flex text-[#6e6e6e] text-sm'>Your Budget (optional):</label>
+                        <div className='flex gap-0 items-center'>
+                          <p className='p-2 border-1 border-[#e8e7e7] text-[#757373]'>$</p>
+                          <input 
+                            value={budget}
+                            step={1}
+                            type='number'
+                            onChange={(e) => setBudget(e.target.value)}
+                            placeholder={`min-amount $${service.StartPrice}`}
+                            className='w-full p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded-r bg-[#eae8e8]'
+                          />
+                        </div>
+                      </div>
+                      <div className='flex flex-col gap-1'>
+                        <label className='font-medium flex text-[#6e6e6e] text-sm'>Description:</label>
+                        <textarea
+                          value={description}
+                          onChange={(e) => setDescription(e.target.value)}
+                          rows={5}
+                          placeholder='Description'
+                          required
+                          className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
+                        />
+                      </div>
+                      <button 
+                        className='w-full cursor-pointer  py-2 px-3 text-[#fff] rounded-md bg-[#104579]'>
+                            Get a solution
+                      </button>
+                    </>
+                  )}
                 </form>
                 <hr className='my-[2em] h-[1.5px] font-semibold shadow-2xl mx-2 bg-[#ededed]'/>
                 

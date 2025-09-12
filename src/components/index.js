@@ -8,3 +8,5 @@ export { default as Footer } from './Footer/footer';
 export { default as Service404 } from './404ServiceError/404ServiceError';
 export { default as ReviewItems } from './Reviews/Reviews';
 export { default as PortfolioItems } from './PortfolioItems/PortfolioItems';
+export { default as Loader } from './loaders/loader';
+export { default as ServiceLoader } from './ServiceLoader/serviceLoader';
