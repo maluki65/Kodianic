@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import { useLocation } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home, Portfolio, ServicesDetails } from './pages';
+import { Home, Portfolio, ServicesDetails, Login, Signup, Dashboard } from './pages';
 import { motion, AnimatePresence } from 'framer-motion'
 import ScrollToHashElement from './components/ScrollToHashElement';
 
