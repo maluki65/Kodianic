@@ -12,10 +12,10 @@ const  useLogin = () => {
       setError('');
       setIsLoading(true)
       
-      await login(values);
+      await login(values.email, values.password);
       setIsLoading(false);
       return  true;
-    } catch {
+    } catch (error) {
       setError(error.response?.data?.message || "Failed to login");
       return false
     } finally {

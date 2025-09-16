@@ -32,7 +32,6 @@ function home() {
   const [success, setSucces] = useState('');
 
   const navigate = useNavigate();
-  const { size } = useWindowSize();
   const targetRef = useRef(null);
 
   const { scrollY } = useScroll();
