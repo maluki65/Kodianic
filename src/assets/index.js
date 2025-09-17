@@ -22,5 +22,7 @@ import VerodahLogo from './VerodahLogo.jpg';
 import BG01 from './BG01.jpg';
 import BG02 from './BG02.jpg';
 import JBG from './JBG.jpg';
+import Dimg from './Dimg.jpg';
+import LogoIconB from './LogoIconB.png';
 
-export { Logo, LogoB, LogoS, SVG1, SVG2, SVG3, Joraf, prestige, memories, verodah, team1, global, global01, global02, global03, David,Joyce, Isaac, JorafLogo, RidesLogo, VerodahLogo, BG01, BG02, JBG };
+export { Logo, LogoB, LogoS, SVG1, SVG2, SVG3, Joraf, prestige, memories, verodah, team1, global, global01, global02, global03, David,Joyce, Isaac, JorafLogo, RidesLogo, VerodahLogo, BG01, BG02, JBG, Dimg, LogoIconB };

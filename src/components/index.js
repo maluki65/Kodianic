@@ -11,3 +11,5 @@ export { default as PortfolioItems } from './PortfolioItems/PortfolioItems';
 export { default as Loader } from './loaders/loader';
 export { default as ServiceLoader } from './ServiceLoader/serviceLoader';
 export { default as Bloader } from './Bloader/Bloader';
+export { default as AdminNav } from './AdminNav/adminNav';
+export { default as AdminSidebar } from './AdminSidebar/AdminSidebar';
