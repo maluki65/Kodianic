@@ -6,17 +6,20 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // On restoring session on app reload
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await Api.get('/profile');
+        const res = await Api.get('/users/profile');
         setUserData(res.data.user);
         setIsAuthenticated(true);
       } catch (error) {
         setUserData(null);
         setIsAuthenticated(false);
+      } finally {
+        setLoading(false);
       }
     };
     checkAuth();
@@ -24,7 +27,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password ) => {
-    const res = await Api.post('/login', {email, password});
+    const res = await Api.post('/users/login', {email, password});
     setUserData(res.data.user);
     setIsAuthenticated(true);
 
@@ -32,7 +35,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signup = async (userInfo) => {
-    const res = await Api.post('/signup', userInfo);
+    const res = await Api.post('/users/signup', userInfo);
     setUserData(res.data.user);
     setIsAuthenticated(true);
     
@@ -40,7 +43,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = async () => {
-    await Api.post('/logout');
+    await Api.post('/users/logout');
     setUserData(null);
     setIsAuthenticated(false);
 
@@ -51,7 +54,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider 
-      value={{ userData, isAuthenticated, login, signup, logout }}
+      value={{ userData, isAuthenticated, loading, login, signup, logout }}
       >
         {children}
     </AuthContext.Provider>

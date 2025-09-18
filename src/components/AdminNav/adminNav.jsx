@@ -30,13 +30,13 @@ function AdminNav({ setActiveTab }) {
     <>
       <div className='w-full py-2 px-4 flex justify-between items-center'>
         <div className='flex flex-col gap-2'>
-          <h1 className='text-2xl cursor-pointer text-[#0f0f0f]'>
+          <h1 className='text-2xl cursor-pointer text-[#0f0f0f] wText'>
             Welcome back, <span className=''>{userName}!</span>
           </h1>
         </div>
 
         <div className='flex gap-2 items-center'>
-          <div className='flex gap-2 items-center cursor-pointer text-[#6c6b6b]'>
+          <div className='flex gap-2 items-center cursor-pointer text-[#6c6b6b] NIcons'>
             <a className=''><LuDownload size={20}/></a>
             <a className=''><IoRocketOutline size={20}/></a>
             <a className=''><MdOutlineSettings size={20}/></a>

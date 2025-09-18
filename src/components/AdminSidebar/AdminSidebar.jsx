@@ -35,7 +35,7 @@ function AdminSidebar({ activeTab, setActiveTab, open, setOpen, id }) {
 
   return (
     <>
-      <div className={`bg-[#c3c2c0] min-h-screen flex flex-col justify-evenly fixed ${open ?  'w-60' : 'w-16'} duration-500 px-4`}>
+      <div className={`bg-[#c3c2c0] min-h-screen flex flex-col justify-evenly fixed sidebar ${open ?  'w-60' : 'w-16'} duration-500 px-4`}>
         <div className='py-3 flex justify-end'>
           <HiMenuAlt3
             size={20}

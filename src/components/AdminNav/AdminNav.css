@@ -1,0 +1,14 @@
+@media(max-width: 426px){
+  .wText{
+    font-size: 11px;
+  }
+  .NIcons{
+    display: none;
+  }
+}
+
+@media(max-width: 320px){
+  .wText{
+    display: none;
+  }
+}

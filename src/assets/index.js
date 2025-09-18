@@ -24,5 +24,7 @@ import BG02 from './BG02.jpg';
 import JBG from './JBG.jpg';
 import Dimg from './Dimg.jpg';
 import LogoIconB from './LogoIconB.png';
+import ClientP from './ClientP.jpg';
+import serviceP from './serviceP.jpg';
 
-export { Logo, LogoB, LogoS, SVG1, SVG2, SVG3, Joraf, prestige, memories, verodah, team1, global, global01, global02, global03, David,Joyce, Isaac, JorafLogo, RidesLogo, VerodahLogo, BG01, BG02, JBG, Dimg, LogoIconB };
+export { Logo, LogoB, LogoS, SVG1, SVG2, SVG3, Joraf, prestige, memories, verodah, team1, global, global01, global02, global03, David,Joyce, Isaac, JorafLogo, RidesLogo, VerodahLogo, BG01, BG02, JBG, Dimg, LogoIconB, ClientP, serviceP };
