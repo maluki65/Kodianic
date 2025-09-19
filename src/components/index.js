@@ -14,3 +14,5 @@ export { default as Bloader } from './Bloader/Bloader';
 export { default as AdminNav } from './AdminNav/adminNav';
 export { default as AdminSidebar } from './AdminSidebar/AdminSidebar';
 export { default as ErrClient } from './404Client/404Client';
+export { default as ContactsItems } from './contactsItems/contactsItems';
+export { default as ServiceItems } from './serviceItems/serviceItems';

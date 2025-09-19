@@ -13,6 +13,7 @@ import { useQueries, useQuery } from '@tanstack/react-query';
 import { ClientP, serviceP } from '../../assets';
 import { useAuth } from '../../Context/AuthContext';
 import { Api } from '../../utils';
+import { Contacts, ServiceRequests, Settings } from '.'
 
 function Dashboard() {
 
@@ -72,8 +73,8 @@ function Dashboard() {
   const contactData = contactQuery.data || [];
   const serviceData = serviceQuery.data || [];
 
-  const clientPerPage = 5;
-  const servicePerPage = 5;
+  const clientPerPage = 4;
+  const servicePerPage = 4;
 
   const handleSearchClientName = debounce((value) => {
     setSearchClientName(value);
@@ -126,7 +127,7 @@ function Dashboard() {
               <motion.div
                 key='Dashboard'
                 initial={{opacity: 0, scale: 1}}
-                animate={{opacity: 1, sacle: 1}}
+                animate={{opacity: 1, scale: 1}}
                 exit={{opacity: 0, scale: 0.95}}
                 transition={{duration: 0.3}}
                 >
@@ -232,10 +233,10 @@ function Dashboard() {
                       </div>
                     </div>
 
-                    <div className='my-[2rem] overflow-hidden grid grid-cols-[60%_40%] gap-2 px-2'>
+                    <div className='my-[2rem] overflow-hidden grid grid-cols-[60%_40%] gap-2 px-2 Tables'>
                       <div className='bg-[#fff] rounded-md p-2'>
                         <h1 className='text-[#2c2b2b] font-semibold leading-relaxed underline'> Service requests</h1>
-                        <div className='flex gap-2 px-1 items-center justify-end'>
+                        <div className='flex gap-2 px-1 items-center justify-end searchBtn'>
                           <div className='flex items-center relative gap-3'>
                             <input  
                               type='text'
@@ -250,9 +251,7 @@ function Dashboard() {
                           </div>
                         </div>
                         {currentServiceItem.length === 0 ? (
-                          <h1 className='text-red-600'>
-                            No service request yet!
-                          </h1>
+                          <Service404/>
                         ) : (
                           <motion.table
                            className='w-full text-left mt-1 bg-transparent tableContent'
@@ -291,9 +290,9 @@ function Dashboard() {
                           </motion.table>
                         )}
                       </div>
-                      <div className='bg-[#fff] rounded-md p-2'>
-                        <h1 className='text-[#2c2b2b] font-semibold leading-relaxed underline'> Recent Clients</h1>
-                        <div className='flex gap-2 px-1 items-center justify-end'>
+                      <div className='bg-[#fff] rounded-md p-2 bg-gradient-to-br from-[#104579] to-[#F0BC02] text-white'>
+                        <h1 className='text-[#fff] font-semibold leading-relaxed underline'> Recent Clients</h1>
+                        <div className='flex gap-2 px-1 items-center justify-end searchBtn'>
                           <div className='flex items-center relative gap-3'>
                             <input  
                               type='text'
@@ -308,9 +307,7 @@ function Dashboard() {
                           </div>
                         </div>
                         {currentClientItem.length === 0 ? (
-                          <h1 className='text-red-600'>
-                            No contacts from client
-                          </h1>
+                          <ErrClient/>
                         ) : (
                           <motion.table
                            className='w-full text-left mt-1 bg-transparent tableContent'
@@ -350,6 +347,48 @@ function Dashboard() {
                     </div>
                   </>
                 </motion.div>
+            )}
+          </AnimatePresence>
+
+          <AnimatePresence mode='wait'>
+            {activeTab === 'Contacts' && (
+              <motion.div
+                key='Contacts'
+                initial={{ opacity: 0, scale: 1}}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95}}
+                transition={{ duration: 0.3 }}
+                >
+                 <Contacts/>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <AnimatePresence mode='wait'>
+            {activeTab === 'Service requests' && (
+              <motion.div
+                key='ServiceRequests'
+                initial={{ opacity: 0, scale: 1}}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95}}
+                transition={{ duration: 0.3 }}
+                >
+                 <ServiceRequests/>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <AnimatePresence mode='wait'>
+            {activeTab === 'Settings' && (
+              <motion.div
+                key='Settings'
+                initial={{ opacity: 0, scale: 1}}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95}}
+                transition={{ duration: 0.3 }}
+                >
+                 <Settings/>
+              </motion.div>
             )}
           </AnimatePresence>
         </div>

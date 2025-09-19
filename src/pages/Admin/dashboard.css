@@ -7,9 +7,17 @@
   }
 }
 
+@media(max-width: 900px){
+  .ContactsDash{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media(max-width: 768px){
   .Analytics{
     grid-template-columns: repeat(2, 1fr);
+  }
+  .Tables{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -23,4 +31,27 @@
   .penOrders{
     font-size: 10px;
   }
+  .searchBtn{
+    justify-content: start;
+  }
+  .tableContent th {
+    font-size: 15px;
+  }
+  td{
+    font-size: 12px;
+  }
+  .tabletContent tr th{
+    padding: 2px;
+  }
+  .tabletContent img{
+    height: 100px;
+    width:100px;
+  }
+  .ConSEa{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .ContactsDash{
+    grid-template-columns: repeat(1, 1fr);
+  }  
 }

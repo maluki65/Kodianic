@@ -26,5 +26,13 @@ import Dimg from './Dimg.jpg';
 import LogoIconB from './LogoIconB.png';
 import ClientP from './ClientP.jpg';
 import serviceP from './serviceP.jpg';
+import blue from './blue.jpg';
+import cap from './cap.jpg';
+import cloud from './cloud.jpg';
+import pink from './pink.jpg'
+import gojo from './gojo.jpg'
+import mount from './mount.jpg';
+import tree from './tree.jpg';
+import Earth from './Earth.jpg';
 
-export { Logo, LogoB, LogoS, SVG1, SVG2, SVG3, Joraf, prestige, memories, verodah, team1, global, global01, global02, global03, David,Joyce, Isaac, JorafLogo, RidesLogo, VerodahLogo, BG01, BG02, JBG, Dimg, LogoIconB, ClientP, serviceP };
+export { Logo, LogoB, LogoS, SVG1, SVG2, SVG3, Joraf, prestige, memories, verodah, team1, global, global01, global02, global03, David,Joyce, Isaac, JorafLogo, RidesLogo, VerodahLogo, BG01, BG02, JBG, Dimg, LogoIconB, ClientP, serviceP, blue, cap, cloud, pink, gojo, mount, tree, Earth };
