@@ -18,13 +18,7 @@ function contactsItems({contact}) {
     if ('vwxyxz'.includes(firstLetter)) return Earth;
     return pink;
   }*/}
-
-  const shortdecription = useMemo(() =>{
-    return contact.description.length > 30 
-      ? contact.description.slice(0, 30) + '...' 
-      : contact.description;
-  }, [contact.description]);
-
+  
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(contact.Email);
@@ -97,7 +91,29 @@ function contactsItems({contact}) {
                 </button>
               )}
             </p>
-            <p className='text-base leading-relaxed tracking-wider'>{shortdecription}</p>
+            <div className="my-[2px] overflow-hidden " id='FAQ'>
+              <details className="group [&_summary::-webkit-details-marker]:hidden transition ease-in duration-700 ">
+                  <summary
+                      className="flex items-center justify-between gap-1.5 rounded-md p-4"
+                  >
+                      <h2 className="text-medium   cursor-pointer text-[#000] hover:underline font-semibold">What Service description</h2>
+
+                      <svg
+                      className="size-5 shrink-0 transition-transform cursor-pointer duration-300 text-[#000] group-open:-rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                  </summary>
+
+                  <p className="px-4 pt-4  text-[#000]">
+                    {contact.description}
+                  </p> 
+              </details>
+            </div>
           </div>
       </motion.div>
     </AnimatePresence>

@@ -22,7 +22,7 @@ function Contacts() {
         const res = await Api.get('/contactUs');
         return res.data.contact || res.data;
       } catch (error) {
-        console.error('Failded to fetch clients:', error);
+        console.error('Failed to fetch clients:', error);
         throw error;
       }
     },
