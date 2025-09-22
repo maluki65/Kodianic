@@ -71,7 +71,7 @@ function home() {
 
       console.log(payload);
       
-      await axios.post('http://localhost:5000/v1/api/contactUs', payload);
+      await axios.post('https://kodianic-backend.onrender.com/v1/api/contactUs', payload);
       //await new Promise((resolve) => setTimeout(resolve, 5000));
 
         setIsLoading(false);
