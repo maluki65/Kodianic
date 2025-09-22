@@ -18,8 +18,8 @@ function AnimatedRoutes () {
         <Route path='/' element={<Home/>} />
         <Route path='/Portfolio' element={<Portfolio/>} />
         <Route path='/service/:heading' element={<ServicesDetails/>} />
-        <Route path='/Signup' 
-          element={!isAuthenticated ? <Signup/> : <Navigate to='/dashboard'/>} />
+        {/*<Route path='/Signup' 
+          element={!isAuthenticated ? <Signup/> : <Navigate to='/dashboard'/>} />*/}
         <Route path='/Login' 
           element={!isAuthenticated ? <Login/> : <Navigate to='/dashboard'/>} />
         <Route path='/dashboard' element={isAuthenticated ? <Dashboard/> : <Navigate to='/login'/>} />
