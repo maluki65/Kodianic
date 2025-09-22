@@ -3,6 +3,7 @@ import './App.css';
 import { Navigate, useLocation } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home, Portfolio, ServicesDetails, Login, Signup, Dashboard } from './pages';
+import { NotFound } from './components';
 import { motion, AnimatePresence } from 'framer-motion'
 import ScrollToHashElement from './components/ScrollToHashElement';
 import { useAuth , AuthProvider} from './Context/AuthContext';
@@ -23,6 +24,7 @@ function AnimatedRoutes () {
         <Route path='/Login' 
           element={!isAuthenticated ? <Login/> : <Navigate to='/dashboard'/>} />
         <Route path='/dashboard' element={isAuthenticated ? <Dashboard/> : <Navigate to='/login'/>} />
+        <Route path='*' element={<NotFound/>} />
       </Routes>
     </AnimatePresence>
   );
