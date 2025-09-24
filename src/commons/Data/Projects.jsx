@@ -22,7 +22,7 @@ const Projects = [
     type: 'Car dealership',
     description: 'A sleek website for a Nairobi car dealership, showcasing sales and services with a premium, trust-building experience.',
     TechStack: ['React', 'Node', 'Tailwindcss'],
-    link: 'https://PrestigeRidesNairobi.com/'
+    link: 'https://prestigeridesnairobi.vercel.app/'
   },
   {
     name: 'Memories',
