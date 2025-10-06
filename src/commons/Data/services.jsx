@@ -24,11 +24,11 @@ const services = [
     content: 'Launch and grow your online store faster with our eCommerce development services. From startup shops to enterprise-level marketplaces, we design secure, cloud-based platforms that are user-friendly, scalable, and tailored to your brand’s goals.',
     ServiceDetail: 'Transform your idea into a high-performing eCommerce store with a secure, scalable, and conversion-focused architecture. Whether it’s a simple shop to start selling or a full-featured online marketplace, we build with flexibility, speed, and growth in mind. Our team ensures seamless payment integration, reliable hosting, and future-ready solutions that grow with your business',
     address: 'https://usabilitygeek.com/wp-content/uploads/2014/05/ecommerce-sticky-lead.jpg',
-    Basic: ['MVP (minimum viable product) setup','User authentication (sign-up/login)', 'Basic dashboard', 'Essential CRUD operations', 'M-pesa Payment integration'],
+    Basic: ['MVP (minimum viable product) setup','User authentication (sign-up/login)', 'Basic dashboard & admin panel', 'Essential CRUD operations(create, read, update, delete)', 'M-pesa Payment integration', 'Responsive UI/UX design (mobile-first layout)', 'Basic SEO setup', '3 Months post-launch support' ],
     BPrice: '$380 – $800',
-    Standard: ['Multi-user roles & permissions', 'Payment integration (Stripe/PayPal/M-pesa)', 'API connections', 'Secure database design'],
+    Standard: ['Everything in Basic', 'Multi-user roles & permissions', 'Advanced Payment integration (Stripe/PayPal/M-pesa)', 'API connections(shipping, email, analytics, etc.)', 'Secure database design', 'Order management system', 'Product catalog with filters & search', 'Responsive UI/UX design (mobile-first layout)', 'Basic SEO setup', 'Performance optimization (caching, image compression)', 'Email notifications (order confirmations, resets, etc.)', '5 Months post-launch support'],
     SPrice: '$900 – $1500',
-    Advanced: ['Scalable SaaS architecture', 'Advanced analytics & reporting', 'Subscription billing system', 'Cloud deployment (AWS, GCP, Azure)', 'Continuous integration & testing'],
+    Advanced: ['Everything in standard', 'Scalable E-commerce architecture', 'Advanced analytics & reporting', 'Subscription billing system', 'Cloud deployment (AWS, GCP, Azure)', 'Continuous integration & testing', 'Automated backups & monitoring', 'Headless CMS integration (for blogs or content marketing)', 'Custom admin dashboard & insights', 'Dedicated support & maintenance (up to 8 month)', 'Optional PWA (Progressive Web App) setup' ],
     APrice: '$1600 – $2500'
   },
   {
