@@ -12,7 +12,7 @@ const services = [
     BPrice: '$150 – $400',
     Standard: ['Everything in Basic', '5 - 9 custom-designed pages', 'CMS intergrated (WordPress/React CMS)', 'SEO-friendly structure', 'Blog setup & social media links', 'Basic Booking System','Advanced SEO & analytics setup', 'Basic Admin panel ', 'Basic animations', 'Enhanced Security Features', '6 Months maintenance & Support', 'Up to 7 free Revisions'],
     SPrice: '$500 – $900',
-    Advanced: ['Everything in Standard', '10+ fully custom pages', 'E-commerce or booking system integration', 'Custom UI/UX design', 'Advanced animations & interactivity', 'Performance optimization', 'M-pesa & Card Payments Intergration', 'Advanced Marketing & Automation', '8 Months Priority support', 'Up to Free 20 Revisions'],
+    Advanced: ['Everything in Standard', '10+ fully custom pages', 'E-commerce or booking system integration', 'Custom UI/UX design', 'Advanced animations & interactivity', 'Performance optimization', 'M-pesa & Card Payments Integration', 'Advanced Marketing & Automation', '8 Months Priority support', 'Up to Free 20 Revisions'],
     APrice: '$1000 – $1500'
   },
   {
