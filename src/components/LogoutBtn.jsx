@@ -17,8 +17,8 @@ const LogoutBtn = () => {
   return (
     <button 
       onClick={handleLogout}
-      className='flex items-center w-full px-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100' role="menuitem">
-        <IoIosLogOut size={20}/> Logout
+      className='flex items-center w-full px-4 gap-4 py-2 text-sm text-gray-700 cursor-pointer hover:bg-gray-100' role="menuitem">
+        <IoIosLogOut className='text-red-600' size={20}/> Logout
       </button>
   );
 };

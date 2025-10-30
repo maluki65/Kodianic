@@ -8,6 +8,7 @@ import { debounce, values } from 'lodash';
 import { Inner } from '../../commons';
 import { FaSearch } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Toaster } from 'react-hot-toast';
 
 function Contacts() {
   const { isAuthenticated, setIsAuthenticated } = useAuth();
@@ -55,6 +56,7 @@ function Contacts() {
         <Loader/>
       ) : (
         <>
+          <Toaster position='top-right' reverseOrder={false}/>
           <div className='bg-[#e8e6e6] px-[4%] py-2'>
             <div className='flex my-[1.5rem] items-center justify-between ConSEa'>
               <h1 className='text-[#000] font-semibold leading-relaxed underline cursor-pointer'>Contact requests</h1>
@@ -97,93 +99,93 @@ function Contacts() {
               </div>
             )}
             <ul className="flex justify-center gap-1 bg-[#e8e6e6]  text-gray-900 mt-[2rem]">
-            <li>
-              <button
-                onClick={() => setCurrentClientPage((prev) => Math.max(prev - 1, 1))}
-                disabled={currentClient === 1}
-                aria-label="Previous page"
-                className="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 disabled:opacity-50 rtl:rotate-180"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+              <li>
+                <button
+                  onClick={() => setCurrentClientPage((prev) => Math.max(prev - 1, 1))}
+                  disabled={currentClient === 1}
+                  aria-label="Previous page"
+                  className="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 disabled:opacity-50 rtl:rotate-180"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-            </li>
-            {totalClientPages <= 7 ? (
-              Array.from({ length: totalClientPages }, (_, i) => (
-                <li key={i}>
-                  <button
-                    onClick={() => setCurrentClientPage(i + 1)}
-                    className={`block size-8 rounded text-center text-sm/8 font-medium transition-colors ${
-                      CurrentClientPage === i + 1
-                        ? 'border border-[#e0C128] bg-[#e0C128] text-white'
-                        : 'border border-gray-200 hover:bg-gray-50'
-                    }`}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="size-4"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
                   >
-                    {i + 1}
-                  </button>
-                </li>
-              ))
-              ) : (
-                <>
-                  <li>
+                    <path
+                      fillRule="evenodd"
+                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </li>
+              {totalClientPages <= 7 ? (
+                Array.from({ length: totalClientPages }, (_, i) => (
+                  <li key={i}>
                     <button
-                      onClick={() => setCurrentClientPage(1)}
+                      onClick={() => setCurrentClientPage(i + 1)}
                       className={`block size-8 rounded text-center text-sm/8 font-medium transition-colors ${
-                        CurrentClientPage === 1
+                        CurrentClientPage === i + 1
                           ? 'border border-[#e0C128] bg-[#e0C128] text-white'
                           : 'border border-gray-200 hover:bg-gray-50'
                       }`}
                     >
-                      1
+                      {i + 1}
                     </button>
                   </li>
-                  <li className="flex items-center justify-center size-8 text-gray-500">...</li>
-                  <li>
-                    <button
-                      onClick={() => setCurrentClientPage(totalClientPages)}
-                      className={`block size-8 rounded text-center text-sm/8 font-medium transition-colors ${
-                        CurrentClientPage === totalClientPages
-                          ? 'border border-[#e0C128] bg-[#e0C128] text-white'
-                          : 'border border-gray-200 hover:bg-gray-50'
-                      }`}
-                    >
-                      {totalClientPages}
-                    </button>
-                  </li>
-                </>
-            )}
-            <li >
-              <button
-                onClick={() => setCurrentClientPage((prev) => Math.min(prev + 1, totalClientPages))}
-                disabled={CurrentClientPage === totalClientPages}
-                aria-label="Next page"
-                className="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 disabled:opacity-50 rtl:rotate-180"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="size-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                ))
+                ) : (
+                  <>
+                    <li>
+                      <button
+                        onClick={() => setCurrentClientPage(1)}
+                        className={`block size-8 rounded text-center text-sm/8 font-medium transition-colors ${
+                          CurrentClientPage === 1
+                            ? 'border border-[#e0C128] bg-[#e0C128] text-white'
+                            : 'border border-gray-200 hover:bg-gray-50'
+                        }`}
+                      >
+                        1
+                      </button>
+                    </li>
+                    <li className="flex items-center justify-center size-8 text-gray-500">...</li>
+                    <li>
+                      <button
+                        onClick={() => setCurrentClientPage(totalClientPages)}
+                        className={`block size-8 rounded text-center text-sm/8 font-medium transition-colors ${
+                          CurrentClientPage === totalClientPages
+                            ? 'border border-[#e0C128] bg-[#e0C128] text-white'
+                            : 'border border-gray-200 hover:bg-gray-50'
+                        }`}
+                      >
+                        {totalClientPages}
+                      </button>
+                    </li>
+                  </>
+              )}
+              <li >
+                <button
+                  onClick={() => setCurrentClientPage((prev) => Math.min(prev + 1, totalClientPages))}
+                  disabled={CurrentClientPage === totalClientPages}
+                  aria-label="Next page"
+                  className="grid size-8 place-content-center rounded border border-gray-200 transition-colors hover:bg-gray-50 disabled:opacity-50 rtl:rotate-180"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-            </li>
-          </ul>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="size-4"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </li>
+            </ul>
           </div>
           
         </>

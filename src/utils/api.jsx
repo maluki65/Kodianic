@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://kodianic-backend.onrender.com/v1/api/',
+  baseURL: 'https://kodianic-backend.onrender.com/v1/api/', //https://kodianic-backend.onrender.com/v1/api/
   withCredentials: true,
 });
 

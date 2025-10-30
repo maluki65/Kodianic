@@ -1,9 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import './serviceItems.css';
 import { blue, cap, cloud, pink, gojo, mount, tree, Earth } from '../../assets';
 import { motion, AnimatePresence } from 'framer-motion';
+import handleServiceDelete from '../../components/serviceDelete';
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 function serviceItems({service}) {
+  const [openMenuId, setOpenMenuId] = useState(null);
 
   const getImageForClient = (name) => {
     const firstLetter = name[0].toLowerCase();
@@ -24,7 +27,7 @@ function serviceItems({service}) {
        exit={{ opacity: 0, scale: 0.95}}
        transition={{ duration: 0.3 }}
         >
-        <div className='my-[20px] flex gap-4 items-center'>
+        <div className='my-[20px] flex justify-between gap-4 items-center'>
           <img 
             src={getImageForClient(service.name)}
             loading='lazy'
@@ -34,6 +37,29 @@ function serviceItems({service}) {
           <div className='flex flex-col gap-1 items-center'>
             <h1 className='text-[#000] text-base leading-relaxed'>{service.name}</h1>
             <p className='text-[#000] text-sm leading-relaxed'>{service.serviceName}</p>
+          </div>
+          <div className='relative px-4 py-1'>
+            <BsThreeDotsVertical
+              className='cursor-pointer'
+              onClick={() =>
+                setOpenMenuId(openMenuId === service.id ? null : service.id)
+              }
+            />
+
+            {openMenuId === service.id && (
+              <div className='absolute right-0 mt-2 w-28 bg-[#fff] border rounded shadow-lg z-10'>
+                <button
+                  onClick={async () => {
+                    setOpenMenuId(null);
+                    const token = localStorage.getItem('csrfToken');
+                    handleServiceDelete(service._id, token);
+                  }}
+                  className='block w-full text-left cursor-pointer px-3 py-1 text-sm hover:bg-[#a5a0a0]'
+                >
+                  Delete
+                </button>
+              </div>
+            )}
           </div>
         </div>
         <div className='flex flex-col gap-2'>
