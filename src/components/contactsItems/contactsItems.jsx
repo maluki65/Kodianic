@@ -3,10 +3,14 @@ import './contactsItems.css';
 import { blue, cap, cloud, pink, gojo, mount, tree, Earth } from '../../assets';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaCheck } from 'react-icons/fa';
+import handleContactDelete from '../contactDelete';
+import { BsThreeDotsVertical } from "react-icons/bs";
+
 
 function contactsItems({contact}) {
   const [copied, setCopied] = useState(false);
   const [Pcopied, setPCopied] = useState(false);
+  const [openMenuId, setOpenMenuId] = useState(null);
 
 
   {/*const getImageForClient = (name) => {
@@ -56,7 +60,7 @@ function contactsItems({contact}) {
             className='h-[30%] w-full object-cover rounded-md'
           />*/}
           <div className='my-[20px] flex flex-col gap-1'>
-            <div className='flex items-center gap-1'>
+            <div className='flex justify-between items-center gap-1'>
               <img 
                 src={gojo}
                 loading='lazy'
@@ -64,6 +68,28 @@ function contactsItems({contact}) {
                 className='h-10 w-10 object-cover rounded-full'
               />
               <h1 className='font-semibold text-base tracking-wide leading-relaxed'>{contact.name}</h1>
+              <div className='relative px-4 py-1'>
+                <BsThreeDotsVertical className='cursor-pointer'
+                    onClick={() => 
+                    setOpenMenuId(openMenuId === contact.id ? null : contact.id)
+                  }
+                />
+
+                {openMenuId === contact.id && (
+                  <div className='absolute right-0 mt-2 w-28 bg-[#fff] border rounded shadow-lg z-10'>
+                    <button
+                      onClick={async() => {
+                        setOpenMenuId(null);
+                        const token = localStorage.getItem('csrfToken');
+                        handleContactDelete(contact._id, token)
+                      }}
+                      className='block w-full text-left cursor-pointer px-3 py-1 text-sm hover:bg-[#a5a0a0]'
+                      >
+                        Delete
+                      </button>
+                  </div>
+                )}
+              </div>
             </div>
             <p className="rounded-full px-2 py-1 border my-1.5 flex items-center justify-between gap-1 bg-[#e5e4e4] w-full">
               {contact.phone}

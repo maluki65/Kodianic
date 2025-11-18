@@ -8,6 +8,7 @@ import { debounce, values } from 'lodash';
 import { Inner } from '../../commons';
 import { FaSearch } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Toaster } from 'react-hot-toast';
 
 function Contacts() {
   const { isAuthenticated, setIsAuthenticated } = useAuth();
@@ -54,6 +55,7 @@ function Contacts() {
         <Loader/>
       ) : (
         <>
+          <Toaster position='top-right' reverseOrder={false}/>
           <div className='bg-[#e8e6e6] px-[4%] py-2'>
             <div className='flex my-[1.5rem] items-center justify-between ConSEa'>
               <h1 className='text-[#000] font-semibold leading-relaxed underline cursor-pointer'>Service requests</h1>

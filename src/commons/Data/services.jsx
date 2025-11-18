@@ -12,7 +12,7 @@ const services = [
     BPrice: '$150 – $400',
     Standard: ['Everything in Basic', '5 - 9 custom-designed pages', 'CMS intergrated (WordPress/React CMS)', 'SEO-friendly structure', 'Blog setup & social media links', 'Basic Booking System','Advanced SEO & analytics setup', 'Basic Admin panel ', 'Basic animations', 'Enhanced Security Features', '6 Months maintenance & Support', 'Up to 7 free Revisions'],
     SPrice: '$500 – $900',
-    Advanced: ['Everything in Standard', '10+ fully custom pages', 'E-commerce or booking system integration', 'Custom UI/UX design', 'Advanced animations & interactivity', 'Performance optimization', 'M-pesa & Card Payments Intergration', 'Advanced Marketing & Automation', '8 Months Priority support', 'Up to Free 20 Revisions'],
+    Advanced: ['Everything in Standard', '10+ fully custom pages', 'E-commerce or booking system integration', 'Custom UI/UX design', 'Advanced animations & interactivity', 'Performance optimization', 'M-pesa & Card Payments Integration', 'Advanced Marketing & Automation', '8 Months Priority support', 'Up to Free 20 Revisions'],
     APrice: '$1000 – $1500'
   },
   {
@@ -103,7 +103,7 @@ const services = [
     EndPrice: 150,
     content: 'Get expert IT consultancy services that align technology with your business goals. We analyze your systems, improve workflows, and design IT strategies that boost efficiency, security, and scalability—helping you save costs and drive growth.',
     ServiceDetail: 'Navigating technology choices can be overwhelming—we make it simple. Our consultancy services help you choose the right tools, strategies, and infrastructures for long-term success. From one-off advice to comprehensive IT roadmaps, we align tech decisions with your business goals.',
-    address: 'https://alphawonders.com/assets/img/conslt_sppt/itconsulting.png',
+    address: 'https://www.askconsulting.com.af/wp-content/uploads/2023/09/Untitled-design-10.png',
     Basic: ['1-hour consultation call', 'Basic IT strategy advice'],
     BPrice: '$75 – $90',
     Standard: ['2–3 strategy sessions', 'Technology stack recommendations', 'Basic documentation/report'],
