@@ -103,7 +103,7 @@ const services = [
     EndPrice: 150,
     content: 'Get expert IT consultancy services that align technology with your business goals. We analyze your systems, improve workflows, and design IT strategies that boost efficiency, security, and scalability—helping you save costs and drive growth.',
     ServiceDetail: 'Navigating technology choices can be overwhelming—we make it simple. Our consultancy services help you choose the right tools, strategies, and infrastructures for long-term success. From one-off advice to comprehensive IT roadmaps, we align tech decisions with your business goals.',
-    address: 'https://www.askconsulting.com.af/wp-content/uploads/2023/09/Untitled-design-10.png',
+    address: 'https://i.pinimg.com/1200x/88/74/c7/8874c72b420869e2c7efd155bb8985cc.jpg',
     Basic: ['1-hour consultation call', 'Basic IT strategy advice'],
     BPrice: '$75 – $90',
     Standard: ['2–3 strategy sessions', 'Technology stack recommendations', 'Basic documentation/report'],
