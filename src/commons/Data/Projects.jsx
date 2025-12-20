@@ -32,6 +32,14 @@ const Projects = [
     TechStack: ['React', 'Node', 'Tailwindcss'],
     link: 'https://www.memories.co.ke/'
   },
+  {
+    name: 'Sellory',
+    image: 'https://i.pinimg.com/736x/8f/40/18/8f4018c264a9d672414bf17744b1b571.jpg',
+    type: 'Multivendor e-commerce platform',
+    description: 'A modern multi-vendor marketplace designed to connect buyers with trusted sellers and make shopping seamless.',
+    TechStack: ['React', 'Node', 'Tailwindcss'],
+    link: 'https://sellory-phi.vercel.app/'
+  },
 ]
 
 export default Projects;
