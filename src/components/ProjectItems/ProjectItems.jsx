@@ -6,7 +6,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 function ProjectItems({Projects}) {
   return (
-    <div className='h-[400px] flex flex-col gap-2 p-1 rounded-md shadow-xl pContainer'>
+    <div className='h-[450px] flex flex-col gap-2 p-1 rounded-md shadow-xl pContainer'>
       <img 
         src={Projects.image}
         loading='lazy'
