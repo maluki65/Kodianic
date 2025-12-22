@@ -9,12 +9,12 @@ const Projects = [
     link: 'https://verodahfreighters.com/'
   },
   {
-    name: 'Joraf Enterprises',
-    image: Joraf,
-    type: 'landing page',
-    description: 'A clean website showcasing Joraf’s coconut products, avocado oil, hibiscus, and ginger juice, emphasizing quality and easy customer access.',
+    name: 'Sellory',
+    image: 'https://i.pinimg.com/736x/8f/40/18/8f4018c264a9d672414bf17744b1b571.jpg',
+    type: 'Multivendor e-commerce platform',
+    description: 'A modern multi-vendor marketplace designed to connect buyers with trusted sellers and make shopping seamless.',
     TechStack: ['React', 'Node', 'Tailwindcss'],
-    link: 'https://joraf.co.ke/'
+    link: 'https://sellory-rouge.vercel.app/'
   },
   {
     name: 'Prestige Rides Nairobi',
@@ -33,12 +33,12 @@ const Projects = [
     link: 'https://www.memories.co.ke/'
   },
   {
-    name: 'Sellory',
-    image: 'https://i.pinimg.com/736x/8f/40/18/8f4018c264a9d672414bf17744b1b571.jpg',
-    type: 'Multivendor e-commerce platform',
-    description: 'A modern multi-vendor marketplace designed to connect buyers with trusted sellers and make shopping seamless.',
+    name: 'Joraf Enterprises',
+    image: Joraf,
+    type: 'landing page',
+    description: 'A clean website showcasing Joraf’s coconut products, avocado oil, hibiscus, and ginger juice, emphasizing quality and easy customer access.',
     TechStack: ['React', 'Node', 'Tailwindcss'],
-    link: 'https://sellory-phi.vercel.app/'
+    link: 'https://joraf.co.ke/'
   },
 ]
 
