@@ -197,10 +197,32 @@
   }
   .TesHeading h1{
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   .TesLogs{
     grid-template-columns: repeat(2, 1fr);
+  }
+  .Acontent{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .SText h1 span{
+    margin-left: 10px;
+  }
+  .HIcons{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  hr{
+    display: none;
+  }
+  .wP{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .Wborder{
+    border: none;
+  }
+  .inputC{
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

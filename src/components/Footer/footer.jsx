@@ -46,7 +46,7 @@ function footer() {
             <ul className='list-none'>
               <li className='flex items-center gap-2 text-wrap'> <FaLocationDot className='text-[#F0BC02]'/> Nyayo highrise along mbagathi way.</li>
               <li className='flex items-center gap-2'> <MdEmail className='text-[#F0BC02]'/> kodianic@gmail.com</li>
-              <li className='flex items-center gap-2'> <FaPhoneAlt className='text-[#F0BC02]'/> +254 793 685 078</li>
+              <li className='flex items-center gap-2'> <FaPhoneAlt className='text-[#F0BC02]'/> +254 799 863 940</li>
             </ul>
           </div>
         </div>

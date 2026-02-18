@@ -100,7 +100,7 @@ function home() {
   return (
     <Inner>
       <Navbar/>
-      <section className=' relative my-[10px] px-[4%] min-h-[90vh] flex flex-col justify-center  gap-7 overflow-hidden'>
+      <section className='relative my-[10px] px-[4%] min-h-[90vh] flex flex-col justify-center  gap-7 overflow-hidden'>
         <div className='flex flex-col gap-5 justify-center items-center HomeContent'>
           <h1 className='text-6xl text-center'>
             <span className='text-[#F0BC02]/60'>Web</span>sites That Convert. Apps That Scale. Tech That Works For <span className='light'>you</span>
@@ -375,7 +375,7 @@ function home() {
               ))}
             </div>
             <p className=' text-base'>
-              Reach us at +254 793 685078 to get started, or <span onClick={handleNavigate} className='underline text-[#F0BC02] cursor-pointer'>explore our portfolio</span> to see what we’ve built
+              Reach us at +254 799 863 940 to get started, or <span onClick={handleNavigate} className='underline text-[#F0BC02] cursor-pointer'>explore our portfolio</span> to see what we’ve built
             </p>
           </div>
         </section>
@@ -413,7 +413,7 @@ function home() {
                       Phone number
                     </h3>
                     <p className='text-[#444444] '>
-                    +254 793685078
+                    +254 799 863 940
                     </p>
                   </div>
                 </div>
@@ -461,7 +461,7 @@ function home() {
                     value={phone}
                     type='number'
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder='0793685078'
+                    placeholder='0799 863 940'
                     required
                     className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
                     />

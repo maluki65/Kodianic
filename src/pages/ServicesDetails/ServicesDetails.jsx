@@ -213,7 +213,7 @@ function ServicesDetails() {
                             value={phone}
                             type='number'
                             onChange={(e) => setPhone(e.target.value)}
-                            placeholder='0793685078'
+                            placeholder='+254 799 863 940'
                             required
                             className='p-2 outline-none focus:bg-[#f4f3f3] focus:border-1 focus:border-[#104579] rounded bg-[#eae8e8]'
                           />
