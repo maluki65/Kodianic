@@ -27,7 +27,7 @@ function footer() {
               <a href='https://www.facebook.com/Kodianic' target='_blank' rel='noopener noreferrer' className='p-2 rounded-full bg-[#104579] cursor-pointer'> <FaFacebook className='text-[#fff] hover:text-[#F0BC02]'  size={18}/></a>
               <a href='https://x.com/kodianic' target='_blank' rel='noopener noreferrer' className='p-2 rounded-full bg-[#104579] cursor-pointer'> <FaXTwitter className='text-[#fff] hover:text-[#F0BC02]'  size={18}/></a>
               <a  href='' target='_blank' rel='noopener noreferrer' className='p-2 rounded-full bg-[#104579] cursor-pointer'> <FaTiktok className='text-[#fff] hover:text-[#F0BC02]'  size={18}/></a>
-              <a  href='https://wa.me/qr/RWIHXS3AOEG6M1' target='_blank' rel='noopener noreferrer' className='p-2 rounded-full bg-[#104579] cursor-pointer'> <FaWhatsapp className='text-[#fff] hover:text-[#F0BC02]'  size={18}/></a>
+              <a  href='https://wa.me/message/FYSJZXTU72F7I1' target='_blank' rel='noopener noreferrer' className='p-2 rounded-full bg-[#104579] cursor-pointer'> <FaWhatsapp className='text-[#fff] hover:text-[#F0BC02]'  size={18}/></a>
             </div>
           </div>
 
